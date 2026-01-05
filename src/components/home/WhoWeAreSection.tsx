@@ -1,85 +1,109 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
+import { Check, Building2 } from "lucide-react";
+import teamMeeting from "@/assets/team-meeting.jpg";
 
 export const WhoWeAreSection = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
 
+  const stats = [
+    { value: "15+", label: "Years Of Experience" },
+    { value: "75+", label: "Team Member" },
+    { value: "48K", label: "Project Complete" },
+  ];
+
   return (
-    <section ref={sectionRef} className="py-32 bg-background relative overflow-hidden">
-      {/* Subtle background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-muted/50 to-transparent" />
-      
-      <div className="max-w-content relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left: Text Content */}
+    <section ref={sectionRef} className="py-20 bg-muted/30 relative overflow-hidden">
+      <div className="max-w-content">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left: Image with floating card and stats */}
           <div className={cn(
             "transition-all duration-700",
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
           )}>
-            <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4">
-              Who We Are
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-[1.1] mb-8">
-              We don't just train.
-              <span className="block mt-2 text-accent">We transform.</span>
-            </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Skill City Group is a consortium of companies dedicated to building 
-                human capacity and organizational excellence. We believe in the power 
-                of skills to change lives and shape futures.
-              </p>
-              <p>
-                From corporate training to leadership development, from skills 
-                certification to strategic consulting—we are your partners in growth.
-              </p>
+            <div className="relative">
+              {/* Main image container */}
+              <div className="relative rounded-3xl overflow-hidden">
+                <img 
+                  src={teamMeeting} 
+                  alt="Team meeting"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              
+              {/* Floating service card */}
+              <div className="absolute -top-4 -right-4 md:right-8 md:top-8 bg-card rounded-2xl shadow-lg border border-border p-5 max-w-[220px] animate-fade-in">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <Building2 className="w-5 h-5 text-accent" />
+                  </div>
+                </div>
+                <h4 className="font-display font-semibold text-foreground mb-2">Financial Planning</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+                </p>
+              </div>
             </div>
             
-            {/* Key Points */}
-            <div className="mt-12 grid sm:grid-cols-2 gap-6">
-              {[
-                { title: "Human-Centered", desc: "People at the heart of everything" },
-                { title: "Innovation-Driven", desc: "Modern methods, real results" },
-                { title: "Impact-Focused", desc: "Measurable transformation" },
-                { title: "Future-Ready", desc: "Skills for tomorrow's world" },
-              ].map((point, index) => (
-                <div key={index} className="group">
-                  <h4 className="font-display font-semibold text-foreground mb-1 group-hover:text-accent transition-colors">
-                    {point.title}
-                  </h4>
-                  <p className="text-muted-foreground text-sm">{point.desc}</p>
+            {/* Stats bar */}
+            <div className="grid grid-cols-3 gap-4 mt-8 p-6 bg-card rounded-2xl border border-border shadow-sm">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-2xl md:text-3xl font-display font-bold text-foreground mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right: Visual Element */}
+          {/* Right: Content */}
           <div className={cn(
-            "relative transition-all duration-700 delay-200",
+            "transition-all duration-700 delay-200",
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
           )}>
-            {/* Abstract visual composition */}
-            <div className="relative aspect-square max-w-lg mx-auto">
-              {/* Main circle */}
-              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-primary to-secondary animate-pulse-glow" />
-              
-              {/* Floating elements */}
-              <div className="absolute top-0 left-0 w-32 h-32 rounded-3xl bg-accent/20 backdrop-blur-sm animate-float" />
-              <div className="absolute bottom-0 right-0 w-40 h-40 rounded-full bg-muted border border-border animate-float delay-200" />
-              <div className="absolute top-1/2 right-0 w-24 h-24 rounded-2xl bg-accent animate-float delay-300" />
-              
-              {/* Stats overlay */}
-              <div className="absolute bottom-12 left-12 p-6 rounded-2xl bg-card shadow-lg border border-border">
-                <div className="text-3xl font-display font-bold text-foreground mb-1">15+</div>
-                <div className="text-muted-foreground text-sm">Years of Excellence</div>
-              </div>
-              
-              {/* Decorative lines */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
-                <circle cx="200" cy="200" r="150" fill="none" stroke="hsl(var(--accent))" strokeWidth="1" strokeDasharray="10 10" opacity="0.3" />
-                <circle cx="200" cy="200" r="180" fill="none" stroke="hsl(var(--border))" strokeWidth="1" />
-              </svg>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 mb-4">
+              <span className="text-accent font-semibold text-sm tracking-wider uppercase">Who</span>
+              <span className="text-foreground font-semibold text-sm tracking-wider uppercase">We Are?</span>
             </div>
+            
+            {/* Headline */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-[1.1] mb-6">
+              Your Financial
+              <span className="block">Partner For Success</span>
+            </h2>
+            
+            {/* Description */}
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec 
+              ullamcorper mattis, pulvinar dapibus leo.
+            </p>
+            
+            {/* Feature box */}
+            <div className="bg-card rounded-2xl border border-border p-6 mb-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h4 className="font-display font-semibold text-foreground mb-2">Cost-Effective</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* CTA */}
+            <Button variant="default" size="lg" asChild>
+              <Link to="/about">
+                Learn More
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
