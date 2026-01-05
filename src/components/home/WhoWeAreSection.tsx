@@ -24,22 +24,20 @@ export const WhoWeAreSection = () => {
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
           )}>
             <div className="relative">
-              {/* Main image container with purple tint */}
+              {/* Main image container */}
               <div className="relative rounded-3xl overflow-hidden">
                 <img 
                   src={teamMeeting} 
                   alt="Team meeting"
                   className="w-full h-auto object-cover"
                 />
-                {/* Purple overlay tint */}
-                <div className="absolute inset-0 bg-violet-500/20 mix-blend-multiply"></div>
               </div>
               
               {/* Floating service card */}
               <div className="absolute -top-4 -right-4 md:right-8 md:top-8 bg-card rounded-2xl shadow-lg border border-border p-5 max-w-[220px] animate-fade-in">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center">
-                    <Building2 className="w-5 h-5 text-violet-600" />
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <Building2 className="w-5 h-5 text-accent" />
                   </div>
                 </div>
                 <h4 className="font-display font-semibold text-foreground mb-2">Financial Planning</h4>
@@ -69,7 +67,7 @@ export const WhoWeAreSection = () => {
           )}>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 mb-4">
-              <span className="text-violet-600 font-semibold text-sm tracking-wider uppercase">Who</span>
+              <span className="text-accent font-semibold text-sm tracking-wider uppercase">Who</span>
               <span className="text-foreground font-semibold text-sm tracking-wider uppercase">We Are?</span>
             </div>
             
@@ -88,8 +86,8 @@ export const WhoWeAreSection = () => {
             {/* Feature box */}
             <div className="bg-card rounded-2xl border border-border p-6 mb-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-violet-100 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-6 h-6 text-violet-600" />
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-6 h-6 text-accent" />
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-foreground mb-2">Cost-Effective</h4>
@@ -101,11 +99,7 @@ export const WhoWeAreSection = () => {
             </div>
             
             {/* CTA */}
-            <Button 
-              size="lg" 
-              asChild
-              className="bg-violet-600 hover:bg-violet-700 text-white rounded-lg"
-            >
+            <Button variant="default" size="lg" asChild>
               <Link to="/about">
                 Learn More
               </Link>
