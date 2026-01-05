@@ -36,7 +36,7 @@ export const ServicesSection = () => {
         {/* Header section with badge */}
         <div className="flex items-center gap-2 mb-4">
           <span className="text-muted-foreground text-sm">We Have An Amazing</span>
-          <span className="px-3 py-1 bg-accent/10 rounded-full text-accent text-sm font-medium">Services</span>
+          <span className="px-3 py-1 bg-violet-100 rounded-full text-violet-600 text-sm font-medium">Services</span>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -55,7 +55,12 @@ export const ServicesSection = () => {
               nec ullamcorper. Pulvinar dapibus leo.
             </p>
             
-            <Button variant="outline" size="lg" asChild className="rounded-full border-foreground text-foreground hover:bg-foreground hover:text-background">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              asChild 
+              className="rounded-full border-foreground text-foreground hover:bg-foreground hover:text-background"
+            >
               <Link to="/services">
                 See More
               </Link>
@@ -72,11 +77,10 @@ export const ServicesSection = () => {
               return (
                 <div 
                   key={index}
-                  className="group p-6 rounded-2xl bg-card border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                    <Icon className="w-6 h-6 text-accent" />
+                  <div className="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center mb-4 group-hover:bg-violet-200 transition-colors">
+                    <Icon className="w-5 h-5 text-violet-600" />
                   </div>
                   <h3 className="font-display font-semibold text-foreground mb-2">
                     {service.title}
