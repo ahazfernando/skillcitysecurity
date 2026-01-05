@@ -1,88 +1,121 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { Check, Star } from "lucide-react";
+import heroPeople from "@/assets/hero-people.jpg";
 
 export const HeroSection = () => {
+  const stats = [
+    { value: "24K+", label: "Business" },
+    { value: "$16M+", label: "Transaction" },
+    { value: "160M+", label: "Transactions yearly" },
+  ];
+
+  const features = [
+    "50+ Countries Worldwide",
+    "98% Customer Satisfaction",
+    "Over 5000+ App Downloads",
+    "24/7 Customer Support",
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-hero-pattern opacity-90" />
-      
-      {/* Mesh gradient overlay */}
-      <div className="absolute inset-0 bg-mesh-gradient" />
-
-      {/* Animated shapes */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-accent/5 blur-3xl animate-float delay-300" />
-      
-      {/* Content */}
-      <div className="max-w-content relative z-10 pt-20">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-white/80 text-sm font-medium">Transforming Skills Since 2015</span>
-          </div>
-          
-          {/* Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-[1.05] mb-8 animate-fade-in delay-100">
-            Building Skill.
-            <span className="block mt-2 text-gradient-hero">Creating Futures.</span>
-          </h1>
-          
-          {/* Sub-headline */}
-          <p className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in delay-200">
-            We transform individuals and organizations through innovative training, 
-            skills development, and strategic consulting.
-          </p>
-          
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in delay-300">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/our-story" className="flex items-center gap-2">
-                Explore Our Journey
-                <ArrowRight size={18} />
-              </Link>
-            </Button>
-            <Button variant="heroOutline" size="lg" asChild>
-              <Link to="/contact" className="flex items-center gap-2">
-                <Play size={18} className="fill-current" />
-                Work With Us
-              </Link>
-            </Button>
-          </div>
-        </div>
-
-        {/* Stats */}
-        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in delay-500">
-          {[
-            { number: "15+", label: "Years of Experience" },
-            { number: "10K+", label: "Professionals Trained" },
-            { number: "200+", label: "Corporate Partners" },
-            { number: "98%", label: "Client Satisfaction" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2">
-                {stat.number}
-              </div>
-              <div className="text-white/60 text-sm">{stat.label}</div>
+    <section className="pt-32 pb-16 bg-background overflow-hidden">
+      <div className="max-w-content">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Image with floating card */}
+          <div className="relative">
+            <div className="relative rounded-3xl overflow-hidden">
+              <img 
+                src={heroPeople} 
+                alt="Business professionals collaborating"
+                className="w-full h-auto object-cover"
+              />
             </div>
-          ))}
-        </div>
-      </div>
+            
+            {/* Floating trust card */}
+            <div className="absolute -bottom-6 -left-4 md:left-8 bg-card rounded-2xl shadow-lg border border-border p-5 max-w-[280px] animate-fade-in">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                  <Check className="w-5 h-5 text-accent" />
+                </div>
+                <span className="font-display font-semibold text-foreground">Trusted by 2M+ Customers</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-3">
+                Join over <span className="text-accent font-semibold">+18,500</span> new customers who choose our product every day!
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div 
+                      key={i} 
+                      className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary border-2 border-card"
+                    />
+                  ))}
+                </div>
+                <div className="flex items-center gap-1 ml-2">
+                  <span className="text-sm text-muted-foreground">5M+ Reviews</span>
+                  <div className="flex">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star key={i} className="w-3 h-3 text-amber-400 fill-amber-400" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in delay-700">
-        <span className="text-white/50 text-sm">Scroll to explore</span>
-        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
-          <div className="w-1 h-2 rounded-full bg-white/60 animate-bounce" />
+          {/* Right: Content */}
+          <div className="lg:pl-8">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+                <div className="w-3 h-3 rounded-full bg-accent" />
+              </div>
+              <span className="text-accent font-semibold text-sm tracking-wider uppercase">About Us</span>
+            </div>
+            
+            {/* Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-display font-bold text-foreground leading-[1.1] mb-6">
+              Expert Solutions for{" "}
+              <span className="text-accent">Your Financial Future</span>
+            </h1>
+            
+            {/* Description */}
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Our comprehensive solutions provide expert guidance in budgeting, 
+              expense tracking, investment management, and more.
+            </p>
+            
+            {/* Features Grid */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3 h-3 text-accent" />
+                  </div>
+                  <span className="text-sm text-foreground">{feature}</span>
+                </div>
+              ))}
+            </div>
+            
+            {/* CTA */}
+            <Button variant="default" size="lg" asChild className="mb-12">
+              <Link to="/contact">
+                Start 7 Days Free Trial
+              </Link>
+            </Button>
+            
+            {/* Stats */}
+            <div className="flex flex-wrap gap-8 pt-8 border-t border-border">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
