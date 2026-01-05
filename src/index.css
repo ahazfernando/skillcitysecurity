@@ -164,13 +164,17 @@
 
   /* Text gradients */
   .text-gradient {
-    @apply bg-clip-text text-transparent;
     background: linear-gradient(135deg, hsl(203 89% 53%) 0%, hsl(203 89% 70%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .text-gradient-hero {
-    @apply bg-clip-text text-transparent;
     background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 60% 90%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   /* Animated underline */
