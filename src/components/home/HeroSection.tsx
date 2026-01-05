@@ -1,123 +1,219 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Check, Star } from "lucide-react";
-import heroPeople from "@/assets/hero-people.jpg";
+import { ArrowRight, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+
+import heroSlide1 from "@/assets/hero-slide-1.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import heroSlide3 from "@/assets/hero-slide-3.jpg";
+
+const slides = [
+  {
+    image: heroSlide1,
+    title: "Building Tomorrow's",
+    highlight: "Business Leaders",
+    subtitle: "Strategic consulting and skill development for enterprises ready to scale.",
+  },
+  {
+    image: heroSlide2,
+    title: "Global Reach,",
+    highlight: "Local Expertise",
+    subtitle: "Operating across 50+ countries with deep market understanding.",
+  },
+  {
+    image: heroSlide3,
+    title: "Data-Driven",
+    highlight: "Decision Making",
+    subtitle: "Transform insights into actionable strategies for sustainable growth.",
+  },
+];
 
 export const HeroSection = () => {
-  const stats = [
-    { value: "24K+", label: "Business" },
-    { value: "$16M+", label: "Transaction" },
-    { value: "160M+", label: "Transactions yearly" },
-  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const features = [
-    "50+ Countries Worldwide",
-    "98% Customer Satisfaction",
-    "Over 5000+ App Downloads",
-    "24/7 Customer Support",
-  ];
+  const goToSlide = useCallback((index: number) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentSlide(index);
+    setTimeout(() => setIsTransitioning(false), 800);
+  }, [isTransitioning]);
+
+  const nextSlide = useCallback(() => {
+    goToSlide((currentSlide + 1) % slides.length);
+  }, [currentSlide, goToSlide]);
+
+  const prevSlide = useCallback(() => {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+  }, [currentSlide, goToSlide]);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 6000);
+    return () => clearInterval(interval);
+  }, [nextSlide]);
 
   return (
-    <section className="pt-32 pb-16 bg-background overflow-hidden">
-      <div className="max-w-content">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Image with floating card */}
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden">
-              <img 
-                src={heroPeople} 
-                alt="Business professionals collaborating"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            
-            {/* Floating trust card */}
-            <div className="absolute -bottom-6 -left-4 md:left-8 bg-card rounded-2xl shadow-lg border border-border p-5 max-w-[280px] animate-fade-in">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Check className="w-5 h-5 text-accent" />
-                </div>
-                <span className="font-display font-semibold text-foreground">Trusted by 2M+ Customers</span>
-              </div>
-              <p className="text-sm text-muted-foreground mb-3">
-                Join over <span className="text-accent font-semibold">+18,500</span> new customers who choose our product every day!
-              </p>
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div 
-                      key={i} 
-                      className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary border-2 border-card"
-                    />
-                  ))}
-                </div>
-                <div className="flex items-center gap-1 ml-2">
-                  <span className="text-sm text-muted-foreground">5M+ Reviews</span>
-                  <div className="flex">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-3 h-3 text-amber-400 fill-amber-400" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background Images with Crossfade */}
+      <div className="absolute inset-0">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={slide.image}
+              alt={`${slide.title} ${slide.highlight}`}
+              className="w-full h-full object-cover scale-105 animate-[zoom_20s_ease-in-out_infinite]"
+            />
           </div>
+        ))}
+        
+        {/* Dark overlay with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/90" />
+        
+        {/* Mesh overlay for depth */}
+        <div className="absolute inset-0 bg-mesh-gradient opacity-60" />
+        
+        {/* Animated particles/dots overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-accent animate-pulse" />
+          <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 rounded-full bg-white animate-pulse delay-300" />
+          <div className="absolute bottom-1/3 left-1/2 w-2.5 h-2.5 rounded-full bg-accent animate-pulse delay-500" />
+          <div className="absolute top-1/2 right-1/4 w-1 h-1 rounded-full bg-white animate-pulse delay-700" />
+        </div>
+      </div>
 
-          {/* Right: Content */}
-          <div className="lg:pl-8">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-accent" />
-              </div>
-              <span className="text-accent font-semibold text-sm tracking-wider uppercase">About Us</span>
+      {/* Bottom gradient fade to white */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background via-background/80 to-transparent" />
+
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex flex-col justify-center pt-20 pb-32">
+        <div className="max-w-content">
+          <div className="max-w-4xl">
+            {/* Animated Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              </span>
+              <span className="text-white/90 text-sm font-medium">Skill City Group</span>
             </div>
-            
-            {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-display font-bold text-foreground leading-[1.1] mb-6">
-              Expert Solutions for{" "}
-              <span className="text-accent">Your Financial Future</span>
-            </h1>
-            
-            {/* Description */}
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Our comprehensive solutions provide expert guidance in budgeting, 
-              expense tracking, investment management, and more.
-            </p>
-            
-            {/* Features Grid */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 text-accent" />
-                  </div>
-                  <span className="text-sm text-foreground">{feature}</span>
-                </div>
+
+            {/* Dynamic Headline */}
+            <div className="relative overflow-hidden mb-6">
+              {slides.map((slide, index) => (
+                <h1
+                  key={index}
+                  className={`text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] transition-all duration-700 ${
+                    index === currentSlide
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 absolute top-0 translate-y-8"
+                  }`}
+                >
+                  <span className="text-white">{slide.title}</span>
+                  <br />
+                  <span className="text-accent">{slide.highlight}</span>
+                </h1>
               ))}
             </div>
-            
-            {/* CTA */}
-            <Button variant="default" size="lg" asChild className="mb-12">
-              <Link to="/contact">
-                Start 7 Days Free Trial
-              </Link>
-            </Button>
-            
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-8 border-t border-border">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-display font-bold text-foreground mb-1">
+
+            {/* Dynamic Subtitle */}
+            <div className="relative h-16 mb-10">
+              {slides.map((slide, index) => (
+                <p
+                  key={index}
+                  className={`text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed transition-all duration-700 ${
+                    index === currentSlide
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 absolute top-0 translate-y-4"
+                  }`}
+                >
+                  {slide.subtitle}
+                </p>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4 mb-16 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <Button variant="hero" size="lg" asChild className="group">
+                <Link to="/contact">
+                  Get Started
+                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm"
+                asChild
+              >
+                <Link to="/services">
+                  <Play className="mr-2 w-4 h-4" />
+                  Watch Demo
+                </Link>
+              </Button>
+            </div>
+
+            {/* Stats Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+              {[
+                { value: "50+", label: "Countries" },
+                { value: "24K+", label: "Clients" },
+                { value: "98%", label: "Satisfaction" },
+                { value: "15+", label: "Years Experience" },
+              ].map((stat, index) => (
+                <div key={index} className="text-center md:text-left">
+                  <div className="text-3xl md:text-4xl font-display font-bold text-white mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-sm text-white/60">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
+        {/* Slide Navigation */}
+        <div className="absolute bottom-36 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
+          <button
+            onClick={prevSlide}
+            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          
+          <div className="flex items-center gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`transition-all duration-300 ${
+                  index === currentSlide
+                    ? "w-8 h-2 bg-accent rounded-full"
+                    : "w-2 h-2 bg-white/40 rounded-full hover:bg-white/60"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+          
+          <button
+            onClick={nextSlide}
+            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-secondary/20 rounded-full blur-3xl pointer-events-none" />
     </section>
   );
 };
