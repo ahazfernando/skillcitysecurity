@@ -1,89 +1,95 @@
-import { Check } from "lucide-react";
+import { Check, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import teamMeeting from "@/assets/team-meeting.jpg";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const FeaturedServicesSection = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
-          {/* Left Side - Images */}
-          <div className="space-y-4">
-            {/* Main large image */}
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={teamMeeting} 
-                alt="Professional recruitment services" 
-                className="w-full h-[300px] object-cover"
-              />
-            </div>
-            {/* Smaller image */}
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={heroBg} 
-                alt="Expert cleaning and maintenance" 
-                className="w-full h-[200px] object-cover"
-              />
+    <section className="py-20 lg:py-24 bg-white">
+      <div className="container mx-auto px-4 max-w-[1280px]">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* LEFT COLUMN - Content Card */}
+          <div className="order-2 lg:order-1">
+            <div 
+              className="rounded-3xl p-8 lg:p-10 shadow-[0_4px_40px_rgba(0,0,0,0.06)]"
+              style={{ backgroundColor: '#f8f6f3' }}
+            >
+              {/* Category Tag */}
+              <span 
+                className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-6"
+                style={{ backgroundColor: '#e8e0d5', color: '#6b5b4f' }}
+              >
+                Professional Staffing Solutions
+              </span>
+
+              {/* Main Heading */}
+              <h2 
+                className="text-3xl lg:text-4xl font-bold mb-4 leading-tight"
+                style={{ color: '#1a1a1a' }}
+              >
+                Your trusted partner for essential services
+              </h2>
+
+              {/* Description */}
+              <p 
+                className="text-base lg:text-lg mb-6 leading-relaxed"
+                style={{ color: '#6b6b6b' }}
+              >
+                Whether you need reliable cleaning crews, certified plumbers, or professional 
+                security personnel — we connect you with vetted experts who deliver quality 
+                service every time.
+              </p>
+
+              {/* CTA Button */}
+              <Button 
+                className="rounded-full px-6 py-3 h-auto text-white font-medium mb-8 transition-all hover:opacity-90 hover:scale-[1.02]"
+                style={{ backgroundColor: '#8b7355' }}
+              >
+                Explore our services
+              </Button>
+
+              {/* Feature List */}
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#8b7355' }} />
+                  <p style={{ color: '#3d3d3d' }}>
+                    Professional cleaning staff, trained in commercial and residential standards
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#8b7355' }} />
+                  <p style={{ color: '#3d3d3d' }}>
+                    Licensed plumbers for installations, repairs, and ongoing maintenance
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#8b7355' }} />
+                  <p style={{ color: '#3d3d3d' }}>
+                    Background-checked security personnel for properties and events
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Side - Content */}
-          <div className="space-y-6">
-            {/* Featured Card */}
-            <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-              <h3 className="text-xl font-bold text-foreground mb-2">
-                Expert Recruitment Solutions
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                Finding the right talent can be challenging. Our expert recruiters connect you with 
-                skilled professionals across cleaning, plumbing, and security sectors. We handle 
-                the screening so you get qualified candidates fast.
-              </p>
-              <Button variant="outline" size="sm" className="rounded-full">
-                View full details
-              </Button>
-            </div>
-
-            {/* Main Heading */}
-            <div className="pt-4">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Your trusted partner for essential services
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Whether you need reliable cleaning crews, certified plumbers, or professional 
-                security personnel, we provide comprehensive staffing solutions tailored to your 
-                needs. Our vetted professionals ensure quality service delivery every time.
-              </p>
-
-              {/* Feature List */}
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-primary" />
-                  </div>
-                  <p className="text-foreground">
-                    <span className="font-semibold">Professional cleaning staff</span> — trained in 
-                    commercial and residential cleaning standards
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-primary" />
-                  </div>
-                  <p className="text-foreground">
-                    <span className="font-semibold">Licensed plumbers</span> — certified experts for 
-                    installations, repairs, and maintenance
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-primary" />
-                  </div>
-                  <p className="text-foreground">
-                    <span className="font-semibold">Trained security personnel</span> — background-checked 
-                    guards for properties and events
-                  </p>
+          {/* RIGHT COLUMN - Media */}
+          <div className="order-1 lg:order-2">
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_4px_40px_rgba(0,0,0,0.08)] group cursor-pointer">
+              <img 
+                src={teamMeeting} 
+                alt="Professional team meeting" 
+                className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {/* Play Button Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div 
+                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.9)' }}
+                >
+                  <Play 
+                    className="w-6 h-6 lg:w-8 lg:h-8 ml-1" 
+                    style={{ color: '#8b7355' }}
+                    fill="#8b7355"
+                  />
                 </div>
               </div>
             </div>
