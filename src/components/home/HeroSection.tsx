@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart3, Target } from "lucide-react";
-import peopleSection from "@/assets/people-section.png";
+import constructionHat from "@/assets/construction-hat.png";
 
 export const HeroSection = () => {
   const stats = [
@@ -28,8 +28,8 @@ export const HeroSection = () => {
           {/* Left: Image */}
           <div className="relative order-2 lg:order-1 animate-fade-in">
             <img 
-              src={peopleSection} 
-              alt="Professional team - business woman, office professional, and skilled tradesman"
+              src={constructionHat} 
+              alt="Professional construction safety helmet"
               className="w-full h-auto object-contain max-w-lg mx-auto lg:mx-0"
             />
           </div>
