@@ -29,7 +29,7 @@ export const Footer = () => {
       {/* Newsletter Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mb-8 pt-24">
         <div className="bg-[hsl(217,89%,61%)] rounded-2xl overflow-visible relative">
-          <div className="flex flex-col md:flex-row items-center">
+          <div className="flex flex-col md:flex-row items-end">
             {/* Left: Image */}
             <div className="w-full md:w-2/5 relative flex items-end justify-center">
               {/* Sparkle decorations */}
@@ -39,7 +39,7 @@ export const Footer = () => {
               <img 
                 src={newsletterIllustration} 
                 alt="Newsletter illustration"
-                className="w-80 h-auto object-contain -mt-24 -mb-1 relative z-0"
+                className="w-80 h-auto object-contain -mt-24 block"
               />
             </div>
             
