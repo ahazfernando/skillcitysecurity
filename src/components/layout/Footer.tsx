@@ -39,7 +39,7 @@ export const Footer = () => {
               <img 
                 src={newsletterIllustration} 
                 alt="Newsletter illustration"
-                className="w-80 h-auto object-contain -mt-24 relative z-0"
+                className="w-80 h-auto object-contain -mt-24 -mb-1 relative z-0"
               />
             </div>
             
