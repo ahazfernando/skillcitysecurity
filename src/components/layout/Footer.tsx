@@ -27,21 +27,19 @@ export const Footer = () => {
   return (
     <footer className="bg-[hsl(220,20%,96%)]">
       {/* Newsletter Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mb-8">
-        <div className="bg-[hsl(217,89%,61%)] rounded-2xl overflow-hidden relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mb-8 pt-24">
+        <div className="bg-[hsl(217,89%,61%)] rounded-2xl overflow-visible relative">
           <div className="flex flex-col md:flex-row items-center">
             {/* Left: Image */}
-            <div className="w-full md:w-2/5 relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* Sparkle decorations */}
-                <div className="absolute top-8 left-12 text-white text-2xl">✦</div>
-                <div className="absolute top-16 right-8 text-white text-lg">✦</div>
-                <div className="absolute bottom-12 left-8 text-white text-sm">✦</div>
-              </div>
+            <div className="w-full md:w-2/5 relative flex items-end justify-center">
+              {/* Sparkle decorations */}
+              <div className="absolute top-0 left-12 text-white text-2xl z-10">✦</div>
+              <div className="absolute top-8 right-8 text-white text-lg z-10">✦</div>
+              <div className="absolute bottom-16 left-8 text-white text-sm z-10">✦</div>
               <img 
                 src={newsletterIllustration} 
                 alt="Newsletter illustration"
-                className="w-full h-auto max-h-72 object-contain p-6"
+                className="w-80 h-auto object-contain -mt-24 relative z-0"
               />
             </div>
             
