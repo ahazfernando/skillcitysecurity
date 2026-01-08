@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart3, Target } from "lucide-react";
 import constructionHat from "@/assets/construction-hat.png";
@@ -57,7 +59,7 @@ export const HeroSection = () => {
                 asChild
                 className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6"
               >
-                <Link to="/contact">
+                <Link href="/contact">
                   Let's talk
                 </Link>
               </Button>
@@ -67,7 +69,7 @@ export const HeroSection = () => {
                 asChild
                 className="rounded-full px-6 border-foreground/20 hover:bg-foreground/5"
               >
-                <Link to="/about" className="flex items-center gap-2">
+                <Link href="/about" className="flex items-center gap-2">
                   Learn more about us
                   <ArrowRight className="w-4 h-4" />
                 </Link>

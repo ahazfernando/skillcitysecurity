@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
-import { Mail, Phone, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
-import newsletterIllustration from "@/assets/newsletter-illustration.png";
+"use client";
+
+import Link from "next/link";
+import { Mail, Phone, Facebook, Twitter, Instagram, Linkedin, MapPin } from "lucide-react";
 
 const footerLinks = {
   company: [
@@ -27,7 +28,7 @@ export const Footer = () => {
   return (
     <footer className="bg-[hsl(220,20%,96%)]">
       {/* Newsletter Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mb-8 pt-24">
+      <div className="max-w-content -mb-8 pt-24">
         <div className="bg-[hsl(217,89%,61%)] rounded-2xl overflow-visible relative">
           <div className="flex flex-col md:flex-row items-end">
             {/* Left: Image */}
@@ -37,7 +38,7 @@ export const Footer = () => {
               <div className="absolute top-8 right-8 text-white text-lg z-10">✦</div>
               <div className="absolute bottom-16 left-8 text-white text-sm z-10">✦</div>
               <img 
-                src={newsletterIllustration} 
+                src="/footer/ChatGPT Image Jan 7, 2026, 10_07_24 AM.png" 
                 alt="Newsletter illustration"
                 className="w-80 h-auto object-contain -mt-24 block"
               />
@@ -69,7 +70,7 @@ export const Footer = () => {
               <p className="text-white/70 text-sm">
                 You will be able to unsubscribe at any time.
                 <br />
-                Read our privacy policy <Link to="/privacy" className="underline hover:text-white">here</Link>
+                Read our privacy policy <Link href="/privacy" className="underline hover:text-white">here</Link>
               </p>
             </div>
           </div>
@@ -78,33 +79,34 @@ export const Footer = () => {
 
       {/* Main Footer */}
       <div className="bg-white pt-20 pb-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-content">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             {/* Brand Column */}
             <div className="lg:col-span-1">
-              <Link to="/" className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[hsl(217,89%,61%)] flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">SC</span>
-                </div>
-                <span className="font-bold text-lg text-gray-800">Stay Clean</span>
+              <Link href="/" className="flex items-center mb-4">
+                <img
+                  src="/home/SkillCityGroupofComapniesLogo.png"
+                  alt="Skill City Logo"
+                  className="h-10 w-auto"
+                />
               </Link>
               <p className="text-gray-500 text-sm mb-6 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.
+                Skill City Group of Companies is a leading provider of comprehensive facility solutions, expert recruitment services, and professional development programs.
               </p>
               <div className="flex items-center gap-4">
-                <a href="#" className="text-gray-400 hover:text-[hsl(217,89%,61%)] transition-colors">
+                <a href="#" className="text-black hover:text-[hsl(217,89%,61%)] transition-colors">
                   <Facebook size={18} />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-[hsl(217,89%,61%)] transition-colors">
+                <a href="#" className="text-black hover:text-[hsl(217,89%,61%)] transition-colors">
                   <Twitter size={18} />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-[hsl(217,89%,61%)] transition-colors">
+                <a href="#" className="text-black hover:text-[hsl(217,89%,61%)] transition-colors">
                   <Instagram size={18} />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-[hsl(217,89%,61%)] transition-colors">
+                <a href="#" className="text-black hover:text-[hsl(217,89%,61%)] transition-colors">
                   <Linkedin size={18} />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-[hsl(217,89%,61%)] transition-colors font-bold text-sm">
+                <a href="#" className="text-black hover:text-[hsl(217,89%,61%)] transition-colors font-bold text-sm">
                   G
                 </a>
               </div>
@@ -117,7 +119,7 @@ export const Footer = () => {
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.path}
+                      href={link.path}
                       className="text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm"
                     >
                       {link.name}
@@ -134,7 +136,7 @@ export const Footer = () => {
                 {footerLinks.support.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.path}
+                      href={link.path}
                       className="text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm"
                     >
                       {link.name}
@@ -151,7 +153,7 @@ export const Footer = () => {
                 {footerLinks.links.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.path}
+                      href={link.path}
                       className="text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm"
                     >
                       {link.name}
@@ -166,13 +168,21 @@ export const Footer = () => {
               <h4 className="font-semibold text-gray-800 mb-4">Contact Us</h4>
               <div className="space-y-3">
                 <a href="tel:+919876543254" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
-                  <Phone size={16} className="text-[hsl(217,89%,61%)]" />
+                  <Phone size={16} className="text-black" />
                   <span>(91) 98765 4321 54</span>
                 </a>
+                <a href="tel:+919876543255" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
+                  <Phone size={16} className="text-black" />
+                  <span>(91) 98765 4321 55</span>
+                </a>
                 <a href="mailto:support@mail.com" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
-                  <Mail size={16} className="text-[hsl(217,89%,61%)]" />
+                  <Mail size={16} className="text-black" />
                   <span>support@mail.com</span>
                 </a>
+                <div className="flex items-start gap-3 text-gray-500 text-sm">
+                  <MapPin size={16} className="text-black mt-0.5 flex-shrink-0" />
+                  <span>123 Innovation Street, Suite 100, Sydney, NSW 2000, Australia</span>
+                </div>
               </div>
             </div>
           </div>
@@ -180,21 +190,21 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-200">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="max-w-content py-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm">
-              © Copyright by CodedUI. All rights reserved.
+              © Copyright by Skill City Group of Companies. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <Link to="/privacy" className="text-gray-500 hover:text-gray-800 text-sm transition-colors">
+              <Link href="/privacy" className="text-gray-500 hover:text-gray-800 text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-500 hover:text-gray-800 text-sm transition-colors">
+              <Link href="/terms" className="text-gray-500 hover:text-gray-800 text-sm transition-colors">
                 Terms of Use
               </Link>
-              <Link to="/legal" className="text-gray-500 hover:text-gray-800 text-sm transition-colors">
+              <Link href="/legal" className="text-gray-500 hover:text-gray-800 text-sm transition-colors">
                 Legal
               </Link>
-              <Link to="/sitemap" className="text-gray-500 hover:text-gray-800 text-sm transition-colors">
+              <Link href="/sitemap" className="text-gray-500 hover:text-gray-800 text-sm transition-colors">
                 Site Map
               </Link>
             </div>

@@ -54,11 +54,49 @@ npm run dev
 
 This project is built with:
 
-- Vite
+- Next.js 15
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+- Firebase Firestore
+- Cloudinary (for image uploads)
+
+## Environment Variables Setup
+
+Create a `.env.local` file in the root directory with the following variables:
+
+### Firebase Configuration
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project-id.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project-id.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+```
+
+### Cloudinary Configuration (for blog image uploads)
+```
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your-cloud-name
+NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=your-upload-preset
+```
+
+## Blog System
+
+The project includes a complete blog management system:
+
+- **Admin Dashboard**: `/admin` - Manage customer inquiries and blog posts
+- **Blog Management**: `/admin/blogs` - Create, edit, and delete blog posts
+- **Blog Listing**: `/blog` - View all published blog posts
+- **Individual Posts**: `/blog/[slug]` - View individual blog posts
+
+### Features:
+- Drag and drop image uploads using Cloudinary
+- Markdown content support
+- Tag management
+- Popular/featured blog flagging
+- Full CRUD operations
 
 ## How can I deploy this project?
 

@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -56,16 +58,15 @@ export const CTASection = () => {
           </p>
           
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16">
-            <Button variant="hero" size="xl" asChild className="min-w-[220px]">
-              <Link to="/contact" className="flex items-center gap-3">
-                <Mail className="w-5 h-5" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button variant="hero" size="lg" asChild>
+              <Link href="/contact" className="flex items-center gap-2">
                 Start a Conversation
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild className="min-w-[220px]">
-              <Link to="/services" className="flex items-center gap-2">
+            <Button variant="heroOutline" size="lg" asChild>
+              <Link href="/services">
                 Explore Services
               </Link>
             </Button>

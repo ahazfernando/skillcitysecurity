@@ -58,20 +58,12 @@ const About = () => {
                 About Us
               </span>
               <h1 className={cn(
-                "text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] mb-8 transition-all duration-700 delay-100",
+                "text-5xl md:text-6xl lg:text-7xl font-display font-white font-bold text-foreground leading-[1.1] mb-8 transition-all duration-700 delay-100",
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}>
                 Transforming Potential
                 <span className="block mt-2 text-accent">Into Performance</span>
               </h1>
-              <p className={cn(
-                "text-xl text-muted-foreground leading-relaxed transition-all duration-700 delay-200",
-                heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              )}>
-                Since 2010, Skill City Group has been at the forefront of human 
-                capital development, helping organizations and individuals reach 
-                their full potential through innovative training and consulting.
-              </p>
             </div>
           </div>
         </section>

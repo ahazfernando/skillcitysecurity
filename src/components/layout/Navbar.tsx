@@ -1,7 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -14,128 +17,121 @@ const navLinks = [
 ];
 
 export const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isActive = (path: string) => pathname === path;
+
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isScrolled || !isHomePage
-          ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
-          : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled ? "py-2" : "py-4"
       )}
     >
-      <nav className="max-w-content flex items-center justify-between h-20">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className={cn(
-            "w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-lg transition-all duration-300",
-            isScrolled || !isHomePage
-              ? "bg-primary text-primary-foreground"
-              : "bg-white/10 text-white backdrop-blur-sm group-hover:bg-white/20"
-          )}>
-            SC
-          </div>
-          <span className={cn(
-            "font-display font-bold text-xl transition-colors duration-300",
-            isScrolled || !isHomePage ? "text-foreground" : "text-white"
-          )}>
-            Skill City
-          </span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={cn(
-                "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative",
-                location.pathname === link.path
-                  ? isScrolled || !isHomePage
-                    ? "text-accent"
-                    : "text-white"
-                  : isScrolled || !isHomePage
-                    ? "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
-              )}
-            >
-              {link.name}
-              {location.pathname === link.path && (
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent" />
-              )}
-            </Link>
-          ))}
-        </div>
-
-        {/* CTA Button */}
-        <div className="hidden lg:flex items-center gap-4">
-          <Button
-            variant={isScrolled || !isHomePage ? "default" : "hero"}
-            size="default"
-            asChild
-          >
-            <Link to="/contact">Get Started</Link>
-          </Button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      <div className="max-w-content mx-auto px-4 lg:px-8">
+        <div
           className={cn(
-            "lg:hidden p-2 rounded-lg transition-colors",
-            isScrolled || !isHomePage
-              ? "text-foreground hover:bg-muted"
-              : "text-white hover:bg-white/10"
+            "backdrop-blur-md rounded-full px-4 lg:px-6 py-3 flex items-center justify-between transition-all duration-300 border bg-white/95 border-gray-100",
+            scrolled ? "shadow-lg" : "shadow-sm"
           )}
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <img
+              src="/home/SkillCityGroupofComapniesLogo.png"
+              alt="Skill City Logo"
+              className="h-8 sm:h-10 w-auto"
+            />
+          </Link>
 
-      {/* Mobile Menu */}
-      <div
-        className={cn(
-          "lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-xl border-b border-border transition-all duration-300 overflow-hidden",
-          isMobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-        )}
-      >
-        <div className="max-w-content py-6 flex flex-col gap-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={cn(
-                "px-4 py-3 rounded-lg text-base font-medium transition-colors",
-                location.pathname === link.path
-                  ? "text-accent bg-accent/5"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-              )}
+          {/* Desktop Navigation - Pill Style */}
+          <nav className="hidden lg:flex items-center gap-1 bg-gray-50/80 dark:bg-gray-900/50 rounded-full px-2 py-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={cn(
+                  "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                  isActive(link.path)
+                    ? "bg-primary text-white"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-white dark:text-gray-300 dark:hover:text-white"
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden lg:flex items-center">
+            <Button
+              className="rounded-full bg-primary hover:bg-primary/90 text-white gap-2"
+              asChild
             >
-              {link.name}
-            </Link>
-          ))}
-          <div className="pt-4 px-4">
-            <Button variant="default" size="lg" className="w-full" asChild>
-              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                Get Started
+              <Link href="/contact">
+                <Phone className="w-4 h-4" />
+                Contact Us
               </Link>
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2 rounded-full transition-colors hover:bg-gray-50 text-gray-900"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden mt-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-gray-100 dark:border-gray-800 transition-all duration-300">
+            <nav className="flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    "px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200",
+                    isActive(link.path)
+                      ? "bg-primary text-white"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+            <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+              <Button
+                className="rounded-full bg-primary hover:bg-primary/90 text-white gap-2 w-full"
+                asChild
+              >
+                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <Phone className="w-4 h-4" />
+                  Contact Us
+                </Link>
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );

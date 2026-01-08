@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
@@ -39,9 +41,9 @@ export const WhoWeAreSection = () => {
               
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-border/50">
                 <img 
-                  src={teamMeeting} 
-                  alt="Team meeting"
-                  className="w-full h-auto object-cover"
+                  src="/home/skillcityheader(D1V1C3).jpg" 
+                  alt="Facility Solutions and Recruitment Services"
+                  className="w-full h-auto object-cover max-h-[350px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-transparent to-accent/10" />
               </div>
@@ -133,7 +135,7 @@ export const WhoWeAreSection = () => {
             
             {/* CTA */}
             <Button variant="gradient" size="lg" asChild>
-              <Link to="/about" className="flex items-center gap-2">
+              <Link href="/about" className="flex items-center gap-2">
                 Learn More About Us
                 <ArrowRight className="w-4 h-4" />
               </Link>
