@@ -13,7 +13,7 @@ import { FileUpload } from "@/components/ui/file-upload";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { toast } from "@/hooks/use-toast";
-import { Plus, Edit, Trash2, Calendar, User, Tag, Image as ImageIcon } from "lucide-react";
+import { Plus, Edit, Trash2, Calendar, User, Tag } from "lucide-react";
 import { Article } from "@/types/article";
 
 export default function BlogManagement() {
@@ -56,7 +56,7 @@ export default function BlogManagement() {
       const blogsData = snapshot.docs.map(doc => {
         const data = doc.data();
         
-        const toISOString = (value: any): string => {
+        const toISOString = (value: unknown): string => {
           if (!value) return '';
           if (value.toDate && typeof value.toDate === 'function') {
             return value.toDate().toISOString();

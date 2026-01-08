@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { collection, getDocs, query, orderBy, Timestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { Button } from "@/components/ui/button";
@@ -9,8 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Mail, Phone, Building2, MapPin, Calendar, Search, Filter, FileText } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Mail, Phone, Building2, MapPin, Calendar, Search, FileText } from "lucide-react";
 import Link from "next/link";
 
 interface Inquiry {
@@ -43,7 +42,7 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     filterInquiries();
-  }, [inquiries, searchTerm, statusFilter, serviceFilter]);
+  }, [filterInquiries]);
 
   const fetchInquiries = async () => {
     try {
@@ -67,7 +66,7 @@ export default function AdminDashboard() {
     }
   };
 
-  const filterInquiries = () => {
+  const filterInquiries = useCallback(() => {
     let filtered = [...inquiries];
 
     // Search filter
@@ -99,7 +98,7 @@ export default function AdminDashboard() {
     }
 
     setFilteredInquiries(filtered);
-  };
+  }, [inquiries, searchTerm, statusFilter, serviceFilter]);
 
   const getStatusBadgeVariant = (status: string) => {
     switch (status) {

@@ -78,8 +78,8 @@ const OurStory = () => {
             <div className="max-w-4xl mx-auto text-center relative">
               <Quote className="w-16 h-16 text-accent/20 mx-auto mb-8" />
               <blockquote className="text-2xl md:text-3xl lg:text-4xl font-display text-foreground leading-[1.4] italic">
-                "We believe that every person has untapped potential waiting to be unleashed. 
-                Our job is to be the catalyst for that transformation."
+                &ldquo;We believe that every person has untapped potential waiting to be unleashed. 
+                Our job is to be the catalyst for that transformation.&rdquo;
               </blockquote>
               <div className="mt-8">
                 <div className="font-semibold text-foreground">The Founders</div>
@@ -113,7 +113,7 @@ const OurStory = () => {
                 <span className="block mt-2 text-accent">is yet to be written.</span>
               </h2>
               <p className="text-xl text-white/70 mb-8">
-                And we'd love for you to be part of it.
+                And we&apos;d love for you to be part of it.
               </p>
             </div>
           </div>

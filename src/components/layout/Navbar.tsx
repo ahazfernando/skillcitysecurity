@@ -20,7 +20,6 @@ export const Navbar = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {

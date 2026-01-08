@@ -57,7 +57,7 @@ export const WhyWeExistSection = () => {
           <div className="relative">
             <Quote className="absolute -top-8 -left-4 md:left-12 w-20 h-20 text-accent/20" />
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-white leading-[1.1]">
-              We don't just train.
+              We don&apos;t just train.
               <span className="block mt-4 text-gradient bg-gradient-to-r from-accent via-accent/80 to-white bg-clip-text text-transparent">
                 We transform.
               </span>
@@ -110,8 +110,8 @@ export const WhyWeExistSection = () => {
             Our Vision
           </div>
           <blockquote className="text-2xl md:text-3xl lg:text-4xl font-display text-white/80 italic leading-relaxed max-w-4xl mx-auto">
-            "To empower businesses to achieve outcomes effortlessly, 
-            while making their journey toward success easier at every step."
+            &ldquo;To empower businesses to achieve outcomes effortlessly, 
+            while making their journey toward success easier at every step.&rdquo;
           </blockquote>
         </div>
       </div>

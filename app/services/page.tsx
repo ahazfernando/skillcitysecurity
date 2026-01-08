@@ -163,7 +163,7 @@ export default function Services() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our services can help you achieve your goals.
+              Let&apos;s discuss how our services can help you achieve your goals.
             </p>
             <Button variant="hero" size="lg" asChild>
               <Link href="/contact" className="flex items-center gap-2">
@@ -234,7 +234,7 @@ const ServiceBlock = ({ service, index }: { service: typeof services[0]; index: 
             {/* Features */}
             <div className="p-8 rounded-2xl bg-card border border-border">
               <h3 className="font-display font-bold text-xl text-foreground mb-6">
-                What's Included
+                What&apos;s Included
               </h3>
               <ul className="space-y-4">
                 {service.features.map((feature, i) => (

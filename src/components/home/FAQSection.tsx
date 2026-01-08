@@ -79,7 +79,7 @@ export const FAQSection = () => {
                   Still Have Questions?
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Our support team is here to help. Get in touch with us and we'll respond within 24 hours.
+                  Our support team is here to help. Get in touch with us and we&apos;ll respond within 24 hours.
                 </p>
                 <Button className="bg-accent hover:bg-accent/90 text-white">
                   Book a Free Consultation

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
-import { Mail, MapPin, Phone, Send, Clock, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Clock } from "lucide-react";
 
 const contactInfo = [
   {
@@ -88,7 +88,7 @@ const Contact = () => {
                 "text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.1] mb-8 transition-all duration-700 delay-100",
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}>
-                Let's Start a
+                Let&apos;s Start a
                 <span className="block mt-2 text-gradient-hero">Conversation</span>
               </h1>
               <p className={cn(
@@ -96,7 +96,7 @@ const Contact = () => {
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}>
                 Have a question, need more information, or ready to get started? 
-                We'd love to hear from you.
+                We&apos;d love to hear from you.
               </p>
             </div>
           </div>
@@ -150,7 +150,7 @@ const Contact = () => {
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                   Fill out the form and our team will get back to you within 24 hours. 
-                  We're here to help you achieve your goals.
+                  We&apos;re here to help you achieve your goals.
                 </p>
                 
                 <div className="space-y-4">

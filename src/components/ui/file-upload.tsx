@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useCallback, useState } from "react";
-import { Upload, X, Image as ImageIcon } from "lucide-react";
+import { Upload, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface FileUploadProps {
@@ -71,7 +71,7 @@ export function FileUpload({ onUpload, accept = "image/*", maxSize = 5, classNam
         onUpload(url);
         setError(null);
         // Keep preview after successful upload
-      } catch (err) {
+      } catch {
         setError("Failed to upload image. Please try again.");
         setPreview(null);
       } finally {

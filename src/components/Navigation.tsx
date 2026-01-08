@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface NavigationProps {
-  logo?: string | any; // Can be a string path or imported image
+  logo?: string | React.ComponentType | React.ReactElement; // Can be a string path or imported image
   navLinks?: Array<{ href: string; label: string }>;
   contactHref?: string;
 }

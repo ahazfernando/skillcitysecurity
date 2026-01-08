@@ -58,7 +58,7 @@ export const MarketingHeroSection = () => {
                 className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6"
               >
                 <Link href="/contact">
-                  Let's talk
+                  Let&apos;s talk
                 </Link>
               </Button>
               <Button 

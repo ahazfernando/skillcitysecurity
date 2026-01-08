@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 import { Check, Building2, ArrowRight, TrendingUp, Shield, Target } from "lucide-react";
-import teamMeeting from "@/assets/team-meeting.jpg";
 
 export const WhoWeAreSection = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();

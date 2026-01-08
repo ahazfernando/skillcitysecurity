@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowLeft, Calendar, Clock, User, Share2, Linkedin, Twitter } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // This would normally come from a database or CMS
@@ -64,7 +64,7 @@ export default function BlogPost() {
               Post Not Found
             </h1>
             <p className="text-muted-foreground mb-8">
-              The blog post you're looking for doesn't exist.
+              The blog post you&apos;re looking for doesn&apos;t exist.
             </p>
             <Button asChild>
               <Link href="/blog">Back to Blog</Link>

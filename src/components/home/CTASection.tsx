@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Sparkles, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, Sparkles, Phone, MessageCircle } from "lucide-react";
 
 export const CTASection = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -40,7 +40,7 @@ export const CTASection = () => {
                 <Sparkles className="w-4 h-4 text-accent" />
               </div>
             </div>
-            <span className="text-white/90 text-sm font-semibold">Let's Build Your Future Together</span>
+            <span className="text-white/90 text-sm font-semibold">Let&apos;s Build Your Future Together</span>
           </div>
           
           {/* Headline */}
@@ -54,7 +54,7 @@ export const CTASection = () => {
           {/* Description */}
           <p className="text-xl md:text-2xl text-white/70 mb-14 leading-relaxed max-w-2xl mx-auto">
             Partner with us to unlock potential, drive innovation, and achieve 
-            sustainable growth. Let's create the future together.
+            sustainable growth. Let&apos;s create the future together.
           </p>
           
           {/* CTAs */}
