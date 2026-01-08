@@ -58,8 +58,8 @@ export default function BlogManagement() {
         
         const toISOString = (value: unknown): string => {
           if (!value) return '';
-          if (value.toDate && typeof value.toDate === 'function') {
-            return value.toDate().toISOString();
+          if (typeof value === 'object' && value !== null && 'toDate' in value && typeof (value as { toDate: () => Date }).toDate === 'function') {
+            return (value as { toDate: () => Date }).toDate().toISOString();
           }
           if (typeof value === 'string') {
             return value;
