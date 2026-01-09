@@ -21,6 +21,34 @@ export default function BlogManagement() {
   const [loading, setLoading] = useState(true);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingBlog, setEditingBlog] = useState<Article | null>(null);
+
+  // Helper function to format date - handles both string and Timestamp types
+  const formatDate = (date: string | Timestamp | undefined): string => {
+    if (!date) return '';
+    
+    // Handle string dates
+    if (typeof date === 'string') {
+      try {
+        return new Date(date).toLocaleDateString();
+      } catch {
+        return '';
+      }
+    }
+    
+    // Handle Firestore Timestamp objects
+    if (date && typeof date === 'object') {
+      // Check if it's a Firestore Timestamp with toDate method
+      if ('toDate' in date && typeof (date as { toDate: () => Date }).toDate === 'function') {
+        try {
+          return (date as { toDate: () => Date }).toDate().toLocaleDateString();
+        } catch {
+          return '';
+        }
+      }
+    }
+    
+    return '';
+  };
   const [blogForm, setBlogForm] = useState({
     slug: "",
     title: "",
@@ -67,6 +95,11 @@ export default function BlogManagement() {
           return '';
         };
         
+        // Convert dates to strings for consistent typing
+        const dateStr = toISOString(data.date) || toISOString(data.createdAt);
+        const createdAtStr = toISOString(data.createdAt);
+        const lastUpdatedStr = toISOString(data.lastUpdated);
+        
         return {
           id: doc.id,
           slug: data.slug || '',
@@ -76,9 +109,9 @@ export default function BlogManagement() {
           tags: data.tags || [],
           content: data.content || '',
           author: data.author || { name: 'Unknown', avatarURL: '' },
-          date: toISOString(data.date) || toISOString(data.createdAt),
-          createdAt: toISOString(data.createdAt),
-          lastUpdated: toISOString(data.lastUpdated),
+          date: dateStr,
+          createdAt: createdAtStr,
+          lastUpdated: lastUpdatedStr,
           isPopular: data.isPopular || false,
         } as Article;
       });
@@ -478,7 +511,7 @@ export default function BlogManagement() {
                       {blog.date && (
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                           <Calendar className="w-4 h-4" />
-                          <span>{new Date(blog.date).toLocaleDateString()}</span>
+                          <span>{formatDate(blog.date)}</span>
                         </div>
                       )}
                       {blog.tags.length > 0 && (
