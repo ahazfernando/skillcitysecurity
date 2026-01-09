@@ -36,14 +36,6 @@ export default function AdminDashboard() {
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [serviceFilter, setServiceFilter] = useState<string>("all");
 
-  useEffect(() => {
-    fetchInquiries();
-  }, []);
-
-  useEffect(() => {
-    filterInquiries();
-  }, [filterInquiries]);
-
   const fetchInquiries = async () => {
     try {
       const q = query(collection(db, "inquiries"), orderBy("timestamp", "desc"));
@@ -99,6 +91,14 @@ export default function AdminDashboard() {
 
     setFilteredInquiries(filtered);
   }, [inquiries, searchTerm, statusFilter, serviceFilter]);
+
+  useEffect(() => {
+    fetchInquiries();
+  }, []);
+
+  useEffect(() => {
+    filterInquiries();
+  }, [filterInquiries]);
 
   const getStatusBadgeVariant = (status: string) => {
     switch (status) {
