@@ -7,20 +7,20 @@ import { Quote, Lightbulb, Heart, Handshake } from "lucide-react";
 const reasons = [
   {
     number: "01",
-    title: "Born from the Real Struggle",
-    description: "We started because we saw the gap—between potential and opportunity, between skills and success. We exist to bridge that gap.",
+    title: "Connecting Talent with Opportunity",
+    description: "We bridge the gap between exceptional talent and outstanding opportunities. Our recruitment expertise spans industries, ensuring the right fit for both candidates and employers.",
     icon: Lightbulb,
   },
   {
     number: "02",
-    title: "Experience Over Explanation",
-    description: "We don't overpromise. We let people feel the difference through our approach, honesty in conversations, and results that speak.",
+    title: "Comprehensive Facility Solutions",
+    description: "We don't just provide services we deliver end-to-end facility management solutions that keep your operations running smoothly and efficiently.",
     icon: Heart,
   },
   {
     number: "03",
-    title: "A Journey Brand, Not a Transaction",
-    description: "We're not here to sell and disappear. We walk with you—as a partner, not a vendor. Our impact lasts because we build trust.",
+    title: "Partnership That Lasts",
+    description: "We're not here to sell and disappear. We walk with you as a trusted partner, building lasting relationships through recruitment excellence and facility management expertise.",
     icon: Handshake,
   },
 ];
@@ -57,9 +57,9 @@ export const WhyWeExistSection = () => {
           <div className="relative">
             <Quote className="absolute -top-8 -left-4 md:left-12 w-20 h-20 text-accent/20" />
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-white leading-[1.1]">
-              We don&apos;t just train.
+              We don&apos;t just recruit.
               <span className="block mt-4 text-gradient bg-gradient-to-r from-accent via-accent/80 to-white bg-clip-text text-transparent">
-                We transform.
+                We transform businesses.
               </span>
             </h2>
           </div>
@@ -110,8 +110,8 @@ export const WhyWeExistSection = () => {
             Our Vision
           </div>
           <blockquote className="text-2xl md:text-3xl lg:text-4xl font-display text-white/80 italic leading-relaxed max-w-4xl mx-auto">
-            &ldquo;To empower businesses to achieve outcomes effortlessly, 
-            while making their journey toward success easier at every step.&rdquo;
+            &ldquo;To connect exceptional talent with outstanding opportunities while providing 
+            comprehensive facility solutions that drive business success and operational excellence.&rdquo;
           </blockquote>
         </div>
       </div>

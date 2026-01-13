@@ -71,7 +71,7 @@ export const TestimonialsSection = () => {
             <div className="h-px w-12 bg-accent" />
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-foreground leading-[1.1]">
             Trusted by <span className="text-gradient">Industry Leaders</span>
           </h2>
         </div>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
-import { Check, Building2, ArrowRight, TrendingUp, Shield, Target } from "lucide-react";
+import { Building2, ArrowRight, TrendingUp, Shield, Target } from "lucide-react";
 
 export const WhoWeAreSection = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
@@ -12,19 +12,24 @@ export const WhoWeAreSection = () => {
   const stats = [
     { value: "15+", label: "Years Experience", icon: TrendingUp },
     { value: "75+", label: "Team Members", icon: Shield },
-    { value: "48K", label: "Projects Done", icon: Target },
+    { value: "5000+", label: "Projects Done", icon: Target },
   ];
 
-  const features = [
-    { title: "Cost-Effective Solutions", desc: "Maximize ROI with our efficient approach" },
-    { title: "Expert Team", desc: "Industry veterans with proven track records" },
+  const logos = [
+    { 
+      src: "/entity/SkillCityFacilitySolutions(D1V1C1).png", 
+      alt: "Skill City Facility Solutions",
+      href: "/services"
+    },
+    { 
+      src: "/entity/SkillCityFacilitySolutions(D1V2C1).png", 
+      alt: "Skill City Facility Solutions",
+      href: "/services"
+    },
   ];
 
   return (
-    <section ref={sectionRef} className="py-28 bg-gradient-to-b from-muted/30 via-background to-muted/20 relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-0 right-1/4 w-72 h-72 rounded-full bg-accent/5 blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
+    <section ref={sectionRef} className="py-28 bg-white relative overflow-hidden">
       
       <div className="max-w-content relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -45,22 +50,6 @@ export const WhoWeAreSection = () => {
                   className="w-full h-auto object-cover max-h-[350px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-transparent to-accent/10" />
-              </div>
-              
-              {/* Floating service card */}
-              <div className="absolute -top-6 -right-6 md:right-4 md:-top-10 bg-card/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 p-6 max-w-[240px] animate-float">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent/50 flex items-center justify-center shadow-glow-sm">
-                    <Building2 className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="font-display font-bold text-foreground">Financial Planning</span>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Strategic financial planning tailored to your business goals.
-                </p>
-                <div className="mt-4 w-full bg-muted rounded-full h-2 overflow-hidden">
-                  <div className="bg-accent h-full rounded-full w-[85%]" />
-                </div>
               </div>
               
               {/* Experience badge */}
@@ -102,38 +91,36 @@ export const WhoWeAreSection = () => {
             </div>
             
             {/* Headline */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-[1.1] mb-8">
-              Your Financial
-              <span className="block mt-2 text-gradient">Partner For Success</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-foreground leading-[1.1] mb-8">
+              Your Recruitment
+              <span className="block mt-2 text-gradient">and Facility Solutions Partner</span>
             </h2>
             
             {/* Description */}
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              We are committed to transforming businesses through strategic financial 
-              planning, innovative solutions, and dedicated partnership that drives 
-              sustainable growth and lasting success.
+              We connect exceptional talent with outstanding opportunities while providing 
+              comprehensive facility management solutions.
             </p>
             
-            {/* Feature cards */}
-            <div className="space-y-4 mb-10">
-              {features.map((feature, index) => (
-                <div 
+            {/* Logos */}
+            <div className="flex items-center gap-6 mb-10">
+              {logos.map((logo, index) => (
+                <Link 
                   key={index}
-                  className="group flex items-start gap-4 p-5 bg-card rounded-2xl border border-border/50 hover:border-accent/30 hover:shadow-lg transition-all duration-300"
+                  href={logo.href}
+                  className="group transition-all duration-300 hover:opacity-80"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
-                    <Check className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="font-display font-semibold text-foreground text-lg mb-1">{feature.title}</h4>
-                    <p className="text-sm text-muted-foreground">{feature.desc}</p>
-                  </div>
-                </div>
+                  <img 
+                    src={logo.src} 
+                    alt={logo.alt}
+                    className="h-16 w-auto object-contain"
+                  />
+                </Link>
               ))}
             </div>
             
             {/* CTA */}
-            <Button variant="gradient" size="lg" asChild>
+            <Button variant="gradient" size="lg" asChild className="h-12 rounded-[16px]">
               <Link href="/about" className="flex items-center gap-2">
                 Learn More About Us
                 <ArrowRight className="w-4 h-4" />

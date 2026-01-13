@@ -65,7 +65,7 @@ export const CompaniesSection = () => {
             <div className="h-px w-12 bg-accent" />
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-[1.1] mb-6">
+          {/* <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-[1.1] mb-6">
             A Group of Companies
             <span className="block mt-2 text-gradient">United by Purpose</span>
           </h2>
@@ -73,7 +73,7 @@ export const CompaniesSection = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Each company in our group brings unique expertise, 
             all working together to transform human potential.
-          </p>
+          </p> */}
         </div>
 
         {/* Navigation buttons */}

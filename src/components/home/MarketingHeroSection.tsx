@@ -61,17 +61,17 @@ export const MarketingHeroSection = () => {
                   Let&apos;s talk
                 </Link>
               </Button>
-              <Button 
+              {/* <Button 
                 variant="outline" 
                 size="lg" 
                 asChild
-                className="rounded-full px-6 border-foreground/20 hover:bg-foreground/5"
+                className="rounded-full px-6 border-foreground/20 hover:bg-foreground/5 h-10"
               >
                 <Link href="/about" className="flex items-center gap-2">
                   Learn more about us
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-              </Button>
+              </Button> */}
             </div>
             
             {/* Stats Row */}

@@ -8,43 +8,39 @@ import { cn } from "@/lib/utils";
 const services = [
   {
     id: 1,
-    title: "Couples Therapy",
-    description: "Strengthen your relationship and communication.",
-    ageRange: "19-60",
-    category: "Family",
-    categoryColor: "bg-green-500",
-    topBgColor: "bg-green-50 dark:bg-green-950/20",
-    image: "/placeholder.svg", // Replace with actual image
+    title: "Recruitment Services",
+    description: "Connect exceptional talent with outstanding opportunities across all industries.",
+    category: "Talent",
+    categoryColor: "bg-blue-500",
+    topBgColor: "bg-blue-50 dark:bg-blue-950/20",
+    image: "/servicestock/Recruitment.png",
   },
   {
     id: 2,
-    title: "Anger Management",
-    description: "Improve communication, and deepen your connection.",
-    ageRange: null,
-    categories: ["Person", "Group"],
-    categoryColor: "bg-orange-400",
-    topBgColor: "bg-amber-50 dark:bg-amber-950/20",
-    image: "/placeholder.svg", // Replace with actual image
+    title: "Construction Experts",
+    description: "Comprehensive construction and facility management services for your projects.",
+    category: "Construction",
+    categoryColor: "bg-blue-500",
+    topBgColor: "bg-blue-50 dark:bg-blue-950/20",
+    image: "/servicestock/Construction.png",
   },
   {
     id: 3,
-    title: "Teenage Sessions",
-    description: "Support, and guide you toward a brighter tomorrow.",
-    ageRange: "15-25",
-    category: "Teens",
-    categoryColor: "bg-orange-400",
-    topBgColor: "bg-amber-50 dark:bg-amber-950/20",
-    image: "/placeholder.svg", // Replace with actual image
+    title: "Cleaning Services",
+    description: "Professional cleaning and maintenance solutions to keep your facilities spotless.",
+    category: "Facility",
+    categoryColor: "bg-blue-500",
+    topBgColor: "bg-blue-50 dark:bg-blue-950/20",
+    image: "/servicestock/Cleaning.jpeg",
   },
   {
     id: 4,
-    title: "Addiction Therapy",
-    description: "Confidential space for self-reflection and growth.",
-    ageRange: "18-80",
-    category: "Private",
-    categoryColor: "bg-orange-400",
-    topBgColor: "bg-amber-50 dark:bg-amber-950/20",
-    image: "/placeholder.svg", // Replace with actual image
+    title: "Culinary Services",
+    description: "Expert chefs and culinary professionals for your hospitality and catering needs.",
+    category: "Culinary",
+    categoryColor: "bg-blue-500",
+    topBgColor: "bg-blue-50 dark:bg-blue-950/20",
+    image: "/servicestock/Chefs.png",
   },
 ];
 
@@ -53,26 +49,13 @@ export const WellnessServicesSection = () => {
     <section className="py-20 bg-background">
       <div className="max-w-content">
         {/* Header Section */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
-          {/* Left: Title and Subtitle */}
-          <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight mb-4">
-              Your Path to Wellness
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Explore your inner world and gain insights.
-            </p>
-          </div>
-
-          {/* Right: Description and Button */}
-          <div className="flex flex-col justify-center">
-            <p className="text-base text-muted-foreground mb-8 leading-relaxed">
-              We believe in the transformative power of therapy. Our compassionate team of experienced therapists is here to guide you on your journey toward healing, growth, and self-discovery.
-            </p>
-            <Button size="lg" className="w-fit bg-foreground text-background hover:bg-foreground/90">
-              Book Appointment
-            </Button>
-          </div>
+        <div className="mb-16 max-w-4xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-foreground leading-tight mb-4">
+            Your Path to a Brighter Living accross Australia
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Discover comprehensive recruitment and facility solutions tailored to your needs.
+          </p>
         </div>
 
         {/* Services Grid */}
@@ -86,28 +69,12 @@ export const WellnessServicesSection = () => {
               <div className={cn("p-6", service.topBgColor)}>
                 {/* Tags */}
                 <div className="flex flex-wrap items-center gap-2 mb-4">
-                  {service.ageRange && (
+                  <div className="flex items-center gap-2">
+                    <span className={cn("w-2 h-2 rounded-full", service.categoryColor)} />
                     <span className="px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-card/80 text-foreground">
-                      {service.ageRange}
+                      {service.category}
                     </span>
-                  )}
-                  {service.categories ? (
-                    service.categories.map((cat, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <span className={cn("w-2 h-2 rounded-full", service.categoryColor)} />
-                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-card/80 text-foreground">
-                          {cat}
-                        </span>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="flex items-center gap-2">
-                      <span className={cn("w-2 h-2 rounded-full", service.categoryColor)} />
-                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-card/80 text-foreground">
-                        {service.category}
-                      </span>
-                    </div>
-                  )}
+                  </div>
                 </div>
 
                 {/* Title */}
