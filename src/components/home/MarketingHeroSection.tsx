@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Building2, Users } from "lucide-react";
+import { Building2, Users } from "lucide-react";
 
 export const MarketingHeroSection = () => {
   const stats = [

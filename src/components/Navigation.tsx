@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import { isValidElement } from "react";
+import Image, { StaticImageData } from "next/image";
 
 interface NavigationProps {
-  logo?: string | React.ComponentType | React.ReactElement; // Can be a string path or imported image
+  logo?: string | StaticImageData | React.ReactElement; // Can be a string path, static image, or component
   navLinks?: Array<{ href: string; label: string }>;
   contactHref?: string;
 }
@@ -36,6 +37,44 @@ const Navigation = ({
 
   const isActive = (path: string) => pathname === path;
 
+  const renderLogo = () => {
+    if (!logo) {
+      return <span className="text-xl font-bold">Logo</span>;
+    }
+
+    if (isValidElement(logo)) {
+      return logo;
+    }
+
+    // TypeScript type narrowing for string or StaticImageData
+    if (typeof logo === 'string') {
+      return (
+        <Image 
+          src={logo}
+          alt="Logo" 
+          className="h-8 sm:h-10 w-auto"
+          width={120}
+          height={40}
+        />
+      );
+    }
+
+    // Check if it's StaticImageData (has src property)
+    if (typeof logo === 'object' && logo !== null && 'src' in logo) {
+      return (
+        <Image 
+          src={logo as StaticImageData}
+          alt="Logo" 
+          className="h-8 sm:h-10 w-auto"
+          width={120}
+          height={40}
+        />
+      );
+    }
+
+    return <span className="text-xl font-bold">Logo</span>;
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -50,25 +89,7 @@ const Navigation = ({
         >
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            {logo ? (
-              typeof logo === 'string' ? (
-                <img 
-                  src={logo} 
-                  alt="Logo" 
-                  className="h-8 sm:h-10 w-auto"
-                />
-              ) : (
-                <Image 
-                  src={logo} 
-                  alt="Logo" 
-                  className="h-8 sm:h-10 w-auto"
-                  width={120}
-                  height={40}
-                />
-              )
-            ) : (
-              <span className="text-xl font-bold">Logo</span>
-            )}
+            {renderLogo()}
           </Link>
 
           {/* Desktop Navigation - Pill Style */}

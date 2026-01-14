@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Building2 } from "lucide-react";
-import Image from "next/image";
+import { Users, Building2 } from "lucide-react";
 
 export const HeroSection = () => {
   const stats = [

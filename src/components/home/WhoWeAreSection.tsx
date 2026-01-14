@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
-import { Building2, ArrowRight, TrendingUp, Shield, Target } from "lucide-react";
+import { ArrowRight, TrendingUp, Shield, Target } from "lucide-react";
 
 export const WhoWeAreSection = () => {
   const { ref: sectionRef, isVisible } = useScrollReveal();
