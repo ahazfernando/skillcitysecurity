@@ -21,43 +21,89 @@ export default function CleaningService() {
       <main>
         {/* Header Section */}
         <section ref={heroRef} className="relative overflow-hidden">
-          <div className="w-full h-[60vh] md:h-[70vh] relative">
+          <div className="w-full h-[80vh] md:h-[90vh] relative">
+            {/* Background Image */}
             <div 
               className="absolute inset-0"
               style={{
-                backgroundImage: 'url(/header/OurServicesHeader.png)',
+                backgroundImage: 'url(/cleanign/inner_peace_landscape_upscaled_3x.png)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                transform: 'scaleX(-1)'
+                backgroundRepeat: 'no-repeat'
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white" />
+            {/* Gradient Overlay - light beige at top, darkening to green/blue at bottom */}
+            <div className="absolute inset-0 bg-gradient-to-b from-amber-50/60 via-emerald-900/40 to-emerald-950/80" />
+            
+            {/* Logos - White with reduced opacity */}
+            <div className="absolute top-8 left-0 right-0 z-30 flex justify-center gap-8 opacity-40">
+              <Image
+                src="/entity/SkillCityFacilitySolutions(D1V1C1).png"
+                alt="Skill City Facility Solutions"
+                width={120}
+                height={50}
+                className="h-auto object-contain brightness-0 invert"
+              />
+              <Image
+                src="/entity/SkillCityFacilitySolutions(D1V2C1).png"
+                alt="Skill City Facility Solutions"
+                width={120}
+                height={50}
+                className="h-auto object-contain brightness-0 invert"
+              />
+            </div>
             
             <div className="absolute inset-0 flex items-center z-20">
               <div className="max-w-content w-full relative z-10">
-                <div className="max-w-3xl">
-                  <span className={cn(
-                    "inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4 transition-all duration-700",
-                    heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  )}>
-                    Professional Cleaning Services
-                  </span>
-                  <h1 className={cn(
-                    "text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-foreground leading-[1.1] mb-8 transition-all duration-700 delay-100",
-                    heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  )}>
-                    Professional <span className="text-accent">Cleaning Services</span>
-                  </h1>
+                <div className="max-w-3xl mx-auto text-center">
+                  {/* Promotional Banner */}
                   <div className={cn(
-                    "transition-all duration-700 delay-200",
+                    "inline-block bg-white/90 backdrop-blur-sm px-6 py-2 rounded-full shadow-lg mb-6 transition-all duration-700",
                     heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   )}>
-                    <Button variant="hero" size="lg" asChild>
-                      <Link href="#contact" className="flex items-center gap-2">
-                        Get a Free Quote
-                        <ArrowRight size={18} />
-                      </Link>
+                    <span className="text-sm font-semibold text-gray-800">
+                      Voted best peaceful place in the world
+                    </span>
+                  </div>
+                  
+                  {/* Main Heading */}
+                  <h1 className={cn(
+                    "text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-white leading-[1.1] mb-6 transition-all duration-700 delay-100",
+                    heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  )}>
+                    The best place to find your{" "}
+                    <span className="italic font-semibold text-amber-600">Inner Peace</span>
+                  </h1>
+                  
+                  {/* Sub-text */}
+                  <p className={cn(
+                    "text-lg md:text-xl text-white/90 mb-8 leading-relaxed transition-all duration-700 delay-200",
+                    heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  )}>
+                    Feeling ready to relax? Find the best location to reconnect with nature and find inner calm.
+                  </p>
+                  
+                  {/* Search Bar */}
+                  <div className={cn(
+                    "flex gap-3 max-w-2xl mx-auto transition-all duration-700 delay-300",
+                    heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  )}>
+                    <div className="flex-1 relative">
+                      <div className="absolute left-4 top-1/2 -translate-y-1/2">
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                      </div>
+                      <Input 
+                        placeholder="Search for a location..." 
+                        className="pl-12 h-14 text-lg bg-white/95 backdrop-blur-sm border-0 shadow-lg"
+                      />
+                    </div>
+                    <Button 
+                      size="lg" 
+                      className="h-14 px-8 bg-gray-900 hover:bg-gray-800 text-white shadow-lg"
+                    >
+                      Search Now
                     </Button>
                   </div>
                 </div>
@@ -67,63 +113,89 @@ export default function CleaningService() {
         </section>
 
         {/* Why Should You Choose Our Services? */}
-        <section className="py-24 bg-white">
-          <div className="max-w-content">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
-                  Why Should You <span className="text-accent">Choose Our Services?</span>
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  We provide comprehensive cleaning solutions tailored to meet your specific needs. Our professional team ensures your space is spotless, healthy, and welcoming.
+        <section className="py-24 bg-white relative overflow-hidden">
+          {/* Background illustration */}
+          <div className="absolute top-0 left-0 w-64 h-64 opacity-10 pointer-events-none">
+            <div className="w-full h-full bg-gray-300 rounded-full blur-3xl" />
+          </div>
+          
+          <div className="max-w-content relative z-10">
+            {/* Section label */}
+            <div className="text-center mb-6">
+              <span className="text-sm font-semibold tracking-wider uppercase text-gray-600">
+                ABOUT CLEANING AGENCY
+              </span>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div className="relative">
+                {/* Heading with sparkle icons */}
+                <div className="flex items-center gap-4 mb-6">
+                  <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
+                    Why Should You <span className="text-green-600">Choose Our Services?</span>
+                  </h2>
+                  <div className="flex items-center gap-1">
+                    <Sparkles className="w-6 h-6 text-green-600" />
+                    <Sparkles className="w-5 h-5 text-green-600" />
+                    <Sparkles className="w-7 h-7 text-green-600" />
+                  </div>
+                </div>
+                
+                <p className="text-base text-muted-foreground mb-10 leading-relaxed">
+                  We are committed to delivering exceptional cleaning services that leave your spaces sparkling clean and hygienic. Our professional team uses eco-friendly products to ensure a safe and healthy environment for you.
                 </p>
                 
-                <div className="space-y-6 mb-8">
+                <div className="space-y-8 mb-10">
+                  {/* House Cleaning */}
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Home className="w-6 h-6 text-accent" />
+                    <div className="w-14 h-14 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                      <Home className="w-7 h-7 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-display font-bold text-foreground mb-2">Home Cleaning</h3>
-                      <p className="text-muted-foreground">Comprehensive residential cleaning services for your home.</p>
+                      <h3 className="text-xl font-display font-bold text-foreground mb-2">House Cleaning</h3>
+                      <p className="text-muted-foreground">Apartment, condos, and houses - busy people who want their home to feel fresh again.</p>
                     </div>
                   </div>
                   
+                  {/* Office Cleaning */}
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Building2 className="w-6 h-6 text-accent" />
+                    <div className="w-14 h-14 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                      <Building2 className="w-7 h-7 text-green-600" />
                     </div>
                     <div>
                       <h3 className="text-xl font-display font-bold text-foreground mb-2">Office Cleaning</h3>
-                      <p className="text-muted-foreground">Professional commercial cleaning for your business space.</p>
+                      <p className="text-muted-foreground">Maintain a clean, healthy workspace that supports productivity and professionalism.</p>
                     </div>
                   </div>
                   
+                  {/* Store Cleaning */}
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Sparkles className="w-6 h-6 text-accent" />
+                    <div className="w-14 h-14 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                      <Sparkles className="w-7 h-7 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-display font-bold text-foreground mb-2">Deep Cleaning</h3>
-                      <p className="text-muted-foreground">Thorough deep cleaning services for a pristine environment.</p>
+                      <h3 className="text-xl font-display font-bold text-foreground mb-2">Periodical Cleaning</h3>
+                      <p className="text-muted-foreground">Retail shops, studios, and showrooms - spotless spaces that make a great impression.</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="text-muted-foreground/50 text-sm">
-                  + VACUUM + CLEANING + SWEEPING +
+                {/* Decorative text with sparkles */}
+                <div className="text-gray-300 text-2xl font-bold uppercase tracking-wider flex items-center gap-2">
+                  VACUUM <Sparkles className="w-4 h-4 text-green-600" /> CLEANING <Sparkles className="w-4 h-4 text-green-600" /> SWEEPING
                 </div>
               </div>
               
-              <div className="space-y-4">
+              {/* Images side by side */}
+              <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-64 rounded-2xl overflow-hidden">
                   <div className="w-full h-full bg-muted/30 flex items-center justify-center">
-                    <span className="text-muted-foreground">Cleaning Supplies Image</span>
+                    <span className="text-muted-foreground text-sm">Cleaning Supplies Image</span>
                   </div>
                 </div>
                 <div className="relative h-64 rounded-2xl overflow-hidden">
                   <div className="w-full h-full bg-muted/30 flex items-center justify-center">
-                    <span className="text-muted-foreground">Cleaners at Work Image</span>
+                    <span className="text-muted-foreground text-sm">Cleaners at Work Image</span>
                   </div>
                 </div>
               </div>
@@ -138,37 +210,37 @@ export default function CleaningService() {
           </div>
           <div className="max-w-content relative z-10">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-16">
-              Our Company Provide <span className="text-accent">The Best Cleaning Service</span>
+              Our Company Provide <span className="text-green-600">The Best Cleaning Service</span>
             </h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="p-8 rounded-2xl bg-card border border-border hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                  <Home className="w-8 h-8 text-accent" />
+                <div className="w-16 h-16 rounded-xl bg-green-100 flex items-center justify-center mb-6">
+                  <Home className="w-8 h-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-display font-bold text-foreground mb-3">Residential Services</h3>
                 <p className="text-muted-foreground">Complete home cleaning solutions for your comfort.</p>
               </div>
               
               <div className="p-8 rounded-2xl bg-card border border-border hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                  <Sparkles className="w-8 h-8 text-accent" />
+                <div className="w-16 h-16 rounded-xl bg-green-100 flex items-center justify-center mb-6">
+                  <Sparkles className="w-8 h-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-display font-bold text-foreground mb-3">Specialized Cleaning</h3>
                 <p className="text-muted-foreground">Expert cleaning for specific areas and requirements.</p>
               </div>
               
               <div className="p-8 rounded-2xl bg-card border border-border hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                  <User className="w-8 h-8 text-accent" />
+                <div className="w-16 h-16 rounded-xl bg-green-100 flex items-center justify-center mb-6">
+                  <User className="w-8 h-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-display font-bold text-foreground mb-3">Skilled Cleaning</h3>
                 <p className="text-muted-foreground">Trained professionals delivering exceptional results.</p>
               </div>
               
               <div className="p-8 rounded-2xl bg-card border border-border hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                  <Calendar className="w-8 h-8 text-accent" />
+                <div className="w-16 h-16 rounded-xl bg-green-100 flex items-center justify-center mb-6">
+                  <Calendar className="w-8 h-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-display font-bold text-foreground mb-3">Regular Home Cleaning</h3>
                 <p className="text-muted-foreground">Scheduled maintenance cleaning for consistent results.</p>
@@ -183,27 +255,27 @@ export default function CleaningService() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8">
-                  Behind The <span className="text-accent">Home Master Company Stories.</span>
+                  Behind The <span className="text-green-600">Home Master Company Stories.</span>
                 </h2>
                 
                 <div className="grid grid-cols-3 gap-6 mb-8">
                   <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl font-display font-bold text-accent">269+</span>
+                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                      <span className="text-3xl font-display font-bold text-green-600">269+</span>
                     </div>
                     <p className="text-sm text-muted-foreground">Happy Clients</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl font-display font-bold text-accent">386+</span>
+                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                      <span className="text-3xl font-display font-bold text-green-600">386+</span>
                     </div>
                     <p className="text-sm text-muted-foreground">Active Clients</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl font-display font-bold text-accent">600+</span>
+                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                      <span className="text-3xl font-display font-bold text-green-600">600+</span>
                     </div>
                     <p className="text-sm text-muted-foreground">Projects Done</p>
                   </div>
@@ -230,7 +302,7 @@ export default function CleaningService() {
           </div>
           <div className="max-w-content relative z-10">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-16">
-              Get <span className="text-accent">Cleaner Space In Four Steps</span>
+              Get <span className="text-green-600">Cleaner Space In Four Steps</span>
             </h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -241,7 +313,7 @@ export default function CleaningService() {
                 { number: "4", title: "Enjoy Happy & Relax", description: "Sit back and enjoy your sparkling clean space." },
               ].map((step, index) => (
                 <div key={index} className="p-8 rounded-2xl bg-card border border-border hover:shadow-lg transition-shadow">
-                  <div className="w-16 h-16 rounded-full bg-accent text-white flex items-center justify-center text-2xl font-display font-bold mb-6">
+                  <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center text-2xl font-display font-bold mb-6">
                     {step.number}
                   </div>
                   <h3 className="text-xl font-display font-bold text-foreground mb-3">{step.title}</h3>
@@ -264,7 +336,7 @@ export default function CleaningService() {
               
               <div>
                 <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
-                  We Make Your Home <span className="text-accent">Sparkle And Shine</span>
+                  We Make Your Home <span className="text-green-600">Sparkle And Shine</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                   Our professional cleaning team uses eco-friendly products and advanced techniques to ensure your space is not just clean, but truly spotless.
@@ -272,11 +344,11 @@ export default function CleaningService() {
                 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
+                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
                     <span className="text-foreground font-medium">100% Satisfaction</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
+                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
                     <span className="text-foreground font-medium">Eco-Friendly Cleaning Products</span>
                   </div>
                 </div>
@@ -293,7 +365,7 @@ export default function CleaningService() {
         <section className="py-24 bg-background">
           <div className="max-w-content">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-16">
-              We Have A <span className="text-accent">Expert Team To Serve You.</span>
+              We Have A <span className="text-green-600">Expert Team To Serve You.</span>
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -318,7 +390,7 @@ export default function CleaningService() {
         <section className="py-24 bg-white">
           <div className="max-w-content">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-16">
-              Hear What Our <span className="text-accent">Global Clients Say</span>
+              Hear What Our <span className="text-green-600">Global Clients Say</span>
             </h2>
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -337,7 +409,7 @@ export default function CleaningService() {
               <div>
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-accent text-accent" />
+                    <Star key={i} className="w-6 h-6 fill-green-600 text-green-600" />
                   ))}
                 </div>
                 <blockquote className="text-2xl font-display text-foreground mb-6 leading-relaxed">
@@ -353,7 +425,7 @@ export default function CleaningService() {
         </section>
 
         {/* Schedule Your Appointment Today! */}
-        <section id="contact" className="py-24 bg-accent text-white">
+        <section id="contact" className="py-24 bg-green-600 text-white">
           <div className="max-w-content">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -380,7 +452,7 @@ export default function CleaningService() {
                     </SelectContent>
                   </Select>
                   <Textarea placeholder="Message" className="bg-white/10 border-white/20 text-white placeholder:text-white/60 min-h-[120px]" />
-                  <Button variant="default" size="lg" className="w-full bg-white text-accent hover:bg-white/90">
+                  <Button variant="default" size="lg" className="w-full bg-white text-green-600 hover:bg-white/90">
                     Book an Appointment
                   </Button>
                 </form>
@@ -390,7 +462,7 @@ export default function CleaningService() {
                 <div className="w-full h-full bg-white/10 flex items-center justify-center">
                   <span className="text-white/60">Cleaner Professional Image</span>
                 </div>
-                <div className="absolute bottom-6 right-6 bg-accent/90 backdrop-blur-sm px-6 py-4 rounded-xl">
+                <div className="absolute bottom-6 right-6 bg-green-600/90 backdrop-blur-sm px-6 py-4 rounded-xl">
                   <p className="font-bold text-white">100% Satisfaction Guaranteed!</p>
                 </div>
               </div>
@@ -402,7 +474,7 @@ export default function CleaningService() {
         <section className="py-24 bg-background">
           <div className="max-w-content">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-16">
-              Learn About Our <span className="text-accent">Latest News From Blog.</span>
+              Learn About Our <span className="text-green-600">Latest News From Blog.</span>
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -417,7 +489,7 @@ export default function CleaningService() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-display font-bold text-foreground mb-4">{post.title}</h3>
-                    <Link href="/blog" className="text-accent font-medium hover:underline flex items-center gap-2">
+                    <Link href="/blog" className="text-green-600 font-medium hover:underline flex items-center gap-2">
                       READ MORE
                       <ArrowRight size={16} />
                     </Link>
@@ -433,7 +505,7 @@ export default function CleaningService() {
           <div className="max-w-content">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
-                Join Our Newsletter <span className="text-accent">Stay Up To Date</span>
+                Join Our Newsletter <span className="text-green-600">Stay Up To Date</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Subscribe to our newsletter to receive the latest cleaning tips, special offers, and company updates.
