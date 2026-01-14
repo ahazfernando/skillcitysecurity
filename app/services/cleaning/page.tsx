@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Home, Building2, Sparkles, CheckCircle, Star, Mail, Phone, MapPin, User, Calendar, MessageSquare } from "lucide-react";
+import { ArrowRight, Home, Building2, Sparkles, CheckCircle, Star, Mail, Phone, MapPin, User, Calendar, MessageSquare, Leaf } from "lucide-react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,7 +21,7 @@ export default function CleaningService() {
       <main>
         {/* Header Section */}
         <section ref={heroRef} className="relative overflow-hidden">
-          <div className="w-full h-[80vh] md:h-[90vh] relative">
+          <div className="w-full h-[100vh] relative">
             {/* Background Image */}
             <div 
               className="absolute inset-0"
@@ -32,80 +32,37 @@ export default function CleaningService() {
                 backgroundRepeat: 'no-repeat'
               }}
             />
-            {/* Gradient Overlay - light beige at top, darkening to green/blue at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-b from-amber-50/60 via-emerald-900/40 to-emerald-950/80" />
             
-            {/* Logos - White with reduced opacity */}
-            <div className="absolute top-8 left-0 right-0 z-30 flex justify-center gap-8 opacity-40">
-              <Image
-                src="/entity/SkillCityFacilitySolutions(D1V1C1).png"
-                alt="Skill City Facility Solutions"
-                width={120}
-                height={50}
-                className="h-auto object-contain brightness-0 invert"
-              />
-              <Image
-                src="/entity/SkillCityFacilitySolutions(D1V2C1).png"
-                alt="Skill City Facility Solutions"
-                width={120}
-                height={50}
-                className="h-auto object-contain brightness-0 invert"
-              />
-            </div>
             
-            <div className="absolute inset-0 flex items-center z-20">
+            <div className="absolute inset-0 flex items-start z-20 pt-32 md:pt-40">
               <div className="max-w-content w-full relative z-10">
-                <div className="max-w-3xl mx-auto text-center">
+                <div className="max-w-6xl mx-auto text-center">
                   {/* Promotional Banner */}
                   <div className={cn(
-                    "inline-block bg-white/90 backdrop-blur-sm px-6 py-2 rounded-full shadow-lg mb-6 transition-all duration-700",
+                    "inline-block bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full mb-6 transition-all duration-700",
                     heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   )}>
-                    <span className="text-sm font-semibold text-gray-800">
-                      Voted best peaceful place in the world
+                    <span className="text-sm font-semibold text-black">
+                      Best peaceful place
                     </span>
                   </div>
                   
                   {/* Main Heading */}
                   <h1 className={cn(
-                    "text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-white leading-[1.1] mb-6 transition-all duration-700 delay-100",
+                    "text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-black leading-[1.1] mb-6 transition-all duration-700 delay-100",
                     heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   )}>
-                    The best place to find your{" "}
-                    <span className="italic font-semibold text-amber-600">Inner Peace</span>
+                    Professional Facility <br />{" "}
+                    <span className="italic font-medium text-black">Solutions for Brighter living</span>
                   </h1>
                   
                   {/* Sub-text */}
                   <p className={cn(
-                    "text-lg md:text-xl text-white/90 mb-8 leading-relaxed transition-all duration-700 delay-200",
+                    "text-lg md:text-xl text-black/90 mb-8 leading-relaxed transition-all duration-700 delay-200",
                     heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   )}>
                     Feeling ready to relax? Find the best location to reconnect with nature and find inner calm.
                   </p>
-                  
-                  {/* Search Bar */}
-                  <div className={cn(
-                    "flex gap-3 max-w-2xl mx-auto transition-all duration-700 delay-300",
-                    heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  )}>
-                    <div className="flex-1 relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2">
-                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                      </div>
-                      <Input 
-                        placeholder="Search for a location..." 
-                        className="pl-12 h-14 text-lg bg-white/95 backdrop-blur-sm border-0 shadow-lg"
-                      />
-                    </div>
-                    <Button 
-                      size="lg" 
-                      className="h-14 px-8 bg-gray-900 hover:bg-gray-800 text-white shadow-lg"
-                    >
-                      Search Now
-                    </Button>
-                  </div>
                 </div>
               </div>
             </div>
@@ -121,11 +78,7 @@ export default function CleaningService() {
           
           <div className="max-w-content relative z-10">
             {/* Section label */}
-            <div className="text-center mb-6">
-              <span className="text-sm font-semibold tracking-wider uppercase text-gray-600">
-                ABOUT CLEANING AGENCY
-              </span>
-            </div>
+
             
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               <div className="relative">
@@ -186,18 +139,14 @@ export default function CleaningService() {
                 </div>
               </div>
               
-              {/* Images side by side */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative h-64 rounded-2xl overflow-hidden">
-                  <div className="w-full h-full bg-muted/30 flex items-center justify-center">
-                    <span className="text-muted-foreground text-sm">Cleaning Supplies Image</span>
-                  </div>
-                </div>
-                <div className="relative h-64 rounded-2xl overflow-hidden">
-                  <div className="w-full h-full bg-muted/30 flex items-center justify-center">
-                    <span className="text-muted-foreground text-sm">Cleaners at Work Image</span>
-                  </div>
-                </div>
+              {/* Single Image */}
+              <div className="relative h-[500px] rounded-2xl overflow-hidden">
+                <Image
+                  src="/services/interiorhouse(D1V1).jpg"
+                  alt="Interior house cleaning"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
@@ -250,46 +199,89 @@ export default function CleaningService() {
         </section>
 
         {/* Behind The Home Master Company Stories */}
-        <section className="py-24 bg-white">
-          <div className="max-w-content">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8">
-                  Behind The <span className="text-green-600">Home Master Company Stories.</span>
+        <section className="py-24 bg-white relative overflow-hidden">
+          <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-0 items-center rounded-3xl overflow-hidden">
+              {/* Left Content - White Background */}
+              <div className="bg-white px-8 lg:px-12 py-12 lg:py-24 relative z-10">
+                {/* Section Label */}
+                <div className="flex items-center gap-2 mb-6">
+                  <Leaf className="w-5 h-5 text-green-600" />
+                  <span className="text-sm font-semibold tracking-wider text-gray-500">
+                    What we do
+                  </span>
+                </div>
+                
+                {/* Main Heading */}
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-foreground mb-6 leading-tight max-w-2xl">
+                  Behind The Home{" "}
+                  <span className="text-green-600">Master Company</span>{" "}
+                  Stories.
                 </h2>
                 
-                <div className="grid grid-cols-3 gap-6 mb-8">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl font-display font-bold text-green-600">269+</span>
+                {/* Description */}
+                <p className="text-base text-muted-foreground mb-8 leading-relaxed">
+                  We help people live and work in cleaner, healthier spaces with dependable, professional cleaning always tailored to what you need.
+                </p>
+                
+                {/* Statistics */}
+                <div className="grid grid-cols-2 gap-6 mb-8">
+                  {/* Active Clients */}
+                  <div>
+                    <div className="w-16 h-16 rounded-full border-2 border-green-600 flex items-center justify-center mb-4">
+                      {/* Vacuum cleaner icon */}
+                      <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <rect x="4" y="6" width="16" height="10" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M8 10h8M6 18h12" strokeLinecap="round" strokeLinejoin="round" />
+                        <circle cx="10" cy="11" r="1.5" fill="currentColor" />
+                        <circle cx="14" cy="11" r="1.5" fill="currentColor" />
+                      </svg>
                     </div>
-                    <p className="text-sm text-muted-foreground">Happy Clients</p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl font-display font-bold text-green-600">386+</span>
-                    </div>
+                    <div className="text-4xl font-display font-bold text-green-600 mb-2">269+</div>
                     <p className="text-sm text-muted-foreground">Active Clients</p>
                   </div>
                   
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl font-display font-bold text-green-600">600+</span>
+                  {/* Glorious Years */}
+                  <div>
+                    <div className="w-16 h-16 rounded-full border-2 border-green-600 flex items-center justify-center mb-4">
+                      <Building2 className="w-8 h-8 text-green-600" />
                     </div>
-                    <p className="text-sm text-muted-foreground">Projects Done</p>
+                    <div className="text-4xl font-display font-bold text-green-600 mb-2">386+</div>
+                    <p className="text-sm text-muted-foreground">Glorious Years</p>
                   </div>
                 </div>
                 
-                <Button variant="default" size="lg" asChild>
-                  <Link href="#contact">Learn More</Link>
+                {/* Secondary Paragraph */}
+                <p className="text-base text-muted-foreground mb-8">
+                  We put our customers at the heart of everything we do.
+                </p>
+                
+                {/* CTA Button */}
+                <Button 
+                  variant="default" 
+                  size="lg" 
+                  className="bg-gray-900 hover:bg-gray-800 text-white"
+                  asChild
+                >
+                  <Link href="#contact" className="flex items-center gap-2">
+                    Get Started
+                    <ArrowRight className="w-4 h-4 text-green-600" />
+                  </Link>
                 </Button>
               </div>
               
-              <div className="relative h-[500px] rounded-2xl overflow-hidden">
-                <div className="w-full h-full bg-muted/30 flex items-center justify-center">
-                  <span className="text-muted-foreground">Cleaner Professional Image</span>
-                </div>
+              {/* Right Image with Fade Effect */}
+              <div className="relative h-[600px] lg:h-[700px] overflow-hidden">
+                {/* Image */}
+                <Image
+                  src="/cleanign/08544b4d8a96cf5bb65e5cc93a8a9a1f.jpg"
+                  alt="Professional cleaner"
+                  fill
+                  className="object-cover"
+                />
+                
+                {/* Fade gradient from left (white) to right (transparent) */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 via-white/40 to-transparent pointer-events-none" />
               </div>
             </div>
           </div>
