@@ -6,87 +6,92 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Briefcase, GraduationCap, LineChart, Users, CheckCircle } from "lucide-react";
+import { ArrowRight, Building2, Users, Wrench, Shield, CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {
-    id: "corporate-training",
-    title: "Corporate Training",
-    subtitle: "Upskill Your Workforce",
-    description: "Customized training programs designed to enhance your team's capabilities and drive organizational performance. We work with you to identify skill gaps and develop targeted solutions.",
-    icon: Briefcase,
+    id: "facility-solutions",
+    title: "Facility Solutions",
+    subtitle: "Comprehensive Facility Management",
+    description: "Professional facility management services designed to maintain and enhance your business spaces. From maintenance to property management, we ensure your facilities operate at peak efficiency and provide safe, comfortable environments for your operations.",
+    icon: Building2,
+    image: "/services/interiorhouse(D1V1).jpg",
     features: [
-      "Customized curriculum development",
-      "Blended learning approaches",
-      "Hands-on workshops and simulations",
-      "Progress tracking and assessment",
-      "Post-training support and coaching",
+      "Property maintenance and repairs",
+      "Cleaning and janitorial services",
+      "HVAC and electrical maintenance",
+      "Landscaping and groundskeeping",
+      "24/7 facility support",
     ],
     benefits: [
-      "Increased productivity",
-      "Improved employee retention",
-      "Enhanced team collaboration",
-      "Measurable ROI",
+      "Improved workplace safety",
+      "Extended asset lifespan",
+      "Reduced operational costs",
+      "Enhanced productivity",
     ],
   },
   {
-    id: "skills-development",
-    title: "Skills Development",
-    subtitle: "Build Future-Ready Competencies",
-    description: "Comprehensive skills certification and development programs that prepare individuals and teams for the challenges of tomorrow. From technical skills to soft skills, we cover it all.",
-    icon: GraduationCap,
-    features: [
-      "Industry-recognized certifications",
-      "Career development pathways",
-      "Competency-based assessments",
-      "Personalized learning plans",
-      "Mentorship programs",
-    ],
-    benefits: [
-      "Career advancement",
-      "Skill validation",
-      "Industry credibility",
-      "Competitive advantage",
-    ],
-  },
-  {
-    id: "strategic-consulting",
-    title: "Strategic Consulting",
-    subtitle: "Navigate Change with Confidence",
-    description: "Expert guidance to help organizations navigate complex challenges and achieve transformational growth. We partner with you to develop and execute strategies that deliver results.",
-    icon: LineChart,
-    features: [
-      "Organizational assessment",
-      "Strategy development",
-      "Change management",
-      "Digital transformation",
-      "Performance optimization",
-    ],
-    benefits: [
-      "Clear strategic direction",
-      "Improved efficiency",
-      "Sustainable growth",
-      "Competitive positioning",
-    ],
-  },
-  {
-    id: "leadership-programs",
-    title: "Leadership Programs",
-    subtitle: "Develop Visionary Leaders",
-    description: "Developing the leaders who will shape the future of your organization. Our programs cultivate the skills, mindset, and behaviors that define exceptional leadership.",
+    id: "recruitment",
+    title: "Recruitment",
+    subtitle: "Connecting Talent with Opportunity",
+    description: "Expert recruitment services that connect exceptional talent with outstanding opportunities across all industries. We specialize in finding the right candidates who not only meet your requirements but also align with your company culture and values.",
     icon: Users,
+    image: "/services/recreuitment.jpg",
     features: [
-      "Executive coaching",
-      "Leadership assessments",
-      "Team development workshops",
-      "Succession planning",
-      "Leadership retreats",
+      "Comprehensive candidate sourcing",
+      "Skills assessment and screening",
+      "Industry-specific recruitment",
+      "Temporary and permanent placements",
+      "Post-placement support",
     ],
     benefits: [
-      "Stronger leadership pipeline",
-      "Improved decision-making",
-      "Enhanced team performance",
-      "Organizational alignment",
+      "Quality talent acquisition",
+      "Reduced time-to-hire",
+      "Better cultural fit",
+      "Lower turnover rates",
+    ],
+  },
+  {
+    id: "professional-plumbing",
+    title: "Professional Plumbing",
+    subtitle: "Expert Plumbing Solutions",
+    description: "Licensed and experienced plumbing services for residential and commercial properties. Our team handles everything from routine maintenance to emergency repairs, ensuring your plumbing systems operate smoothly and efficiently.",
+    icon: Wrench,
+    image: "/services/plumbingwater.jpg",
+    features: [
+      "Emergency plumbing repairs",
+      "Installation and renovations",
+      "Drain cleaning and maintenance",
+      "Water heater services",
+      "Preventive maintenance programs",
+    ],
+    benefits: [
+      "Fast response times",
+      "Licensed professionals",
+      "Long-lasting solutions",
+      "Preventive maintenance",
+    ],
+  },
+  {
+    id: "security-services",
+    title: "Security Services",
+    subtitle: "Protecting Your People and Assets",
+    description: "Comprehensive security solutions tailored to protect your business, employees, and assets. Our professional security services provide peace of mind through trained personnel, advanced monitoring, and strategic security planning.",
+    icon: Shield,
+    image: "/services/dab71de9b4112fadbb7208c430841d67.jpg",
+    features: [
+      "Security guard services",
+      "Event security management",
+      "Access control systems",
+      "Security assessments",
+      "24/7 monitoring and response",
+    ],
+    benefits: [
+      "Enhanced safety and protection",
+      "Deterrent to crime",
+      "Professional trained staff",
+      "Peace of mind",
     ],
   },
 ];
@@ -130,16 +135,16 @@ export default function Services() {
                     "text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-foreground leading-[1.1] mb-8 transition-all duration-700 delay-100",
                     heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   )}>
-                    <span className="italic">Solutions</span> That
-                    <span className="block mt-2 text-foreground"><span className="italic">Drive Results</span> for you</span>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
+                      <span className="italic">Reliable</span> Services for <span className="italic">Safer Spaces</span>
+                    </span>
+                    <span className="block mt-2 text-foreground">across Australia</span>
                   </h1>
                   <p className={cn(
                     "text-xl text-muted-foreground leading-relaxed transition-all duration-700 delay-200",
                     heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   )}>
-                    From individual skill development to enterprise-wide transformation, 
-                    we offer comprehensive solutions designed to unlock potential and 
-                    deliver measurable impact.
+                    Discover our comprehensive range of professional services designed to meet all your business needs.
                   </p>
                 </div>
               </div>
@@ -190,12 +195,12 @@ const ServiceBlock = ({ service, index }: { service: typeof services[0]; index: 
       id={service.id}
       className={cn(
         "py-12",
-        service.id === "corporate-training" ? "bg-white" : isEven ? "bg-background" : "bg-muted/30"
+        service.id === "facility-solutions" ? "bg-white" : isEven ? "bg-background" : "bg-muted/30"
       )}
     >
       <div className="max-w-content">
         <div className={cn(
-          "grid lg:grid-cols-2 gap-16 items-start transition-all duration-700",
+          "grid lg:grid-cols-2 gap-16 items-center transition-all duration-700",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           {/* Content */}
@@ -226,11 +231,23 @@ const ServiceBlock = ({ service, index }: { service: typeof services[0]; index: 
             </Button>
           </div>
 
-          {/* Features & Benefits */}
+          {/* Image & Features */}
           <div className={cn(
             "space-y-8",
             isEven ? "lg:order-2" : "lg:order-1"
           )}>
+            {/* Service Image */}
+            {service.image && (
+              <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
+            
             {/* Features */}
             <div className="p-8 rounded-2xl bg-card border border-border">
               <h3 className="font-display font-bold text-xl text-foreground mb-6">

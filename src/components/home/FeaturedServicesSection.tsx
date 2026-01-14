@@ -1,5 +1,8 @@
+"use client";
+
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import teamMeeting from "@/assets/team-meeting.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -12,10 +15,12 @@ const FeaturedServicesSection = () => {
           <div className="space-y-4 order-1">
             {/* Top Image with Overlay Card */}
             <div className="relative">
-              <img 
+              <Image 
                 src={teamMeeting} 
                 alt="Professional recruitment services" 
                 className="w-full h-[280px] lg:h-[320px] object-cover rounded-2xl"
+                width={600}
+                height={320}
               />
               {/* Overlay Card */}
               <div 
@@ -50,10 +55,12 @@ const FeaturedServicesSection = () => {
             </div>
 
             {/* Bottom Image */}
-            <img 
+            <Image 
               src={heroBg} 
               alt="Expert cleaning and maintenance" 
               className="w-full h-[180px] lg:h-[200px] object-cover rounded-2xl"
+              width={600}
+              height={200}
             />
           </div>
 
