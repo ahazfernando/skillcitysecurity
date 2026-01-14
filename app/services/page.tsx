@@ -17,6 +17,7 @@ const services = [
     description: "Professional facility management services designed to maintain and enhance your business spaces. From maintenance to property management, we ensure your facilities operate at peak efficiency and provide safe, comfortable environments for your operations.",
     icon: Building2,
     image: "/services/interiorhouse(D1V1).jpg",
+    logo: "/entity/SkillCityFacilitySolutions(D1V1C1).png",
     features: [
       "Property maintenance and repairs",
       "Cleaning and janitorial services",
@@ -38,6 +39,7 @@ const services = [
     description: "Expert recruitment services that connect exceptional talent with outstanding opportunities across all industries. We specialize in finding the right candidates who not only meet your requirements but also align with your company culture and values.",
     icon: Users,
     image: "/services/recreuitment.jpg",
+    logo: "/entity/SkillCityFacilitySolutions(D1V2C1).png",
     features: [
       "Comprehensive candidate sourcing",
       "Skills assessment and screening",
@@ -124,21 +126,18 @@ export default function Services() {
             {/* Content Overlay */}
             <div className="absolute inset-0 flex items-center z-20">
               <div className="max-w-content w-full relative z-10">
-                <div className="max-w-3xl">
+                <div className="max-w-2xl">
                   <span className={cn(
                     "inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4 transition-all duration-700",
                     heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   )}>
-                    Our Services
+                    Professional Services for a Brighter Living
                   </span>
                   <h1 className={cn(
-                    "text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-foreground leading-[1.1] mb-8 transition-all duration-700 delay-100",
+                    "text-5xl md:text-6xl lg:text-7xl font-display font-semibold text-blue-900 leading-[1.1] mb-8 transition-all duration-700 delay-100",
                     heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   )}>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
-                      <span className="italic">Reliable</span> Services for <span className="italic">Safer Spaces</span>
-                    </span>
-                    <span className="block mt-2 text-foreground">across Australia</span>
+                    <span className="italic">Reliable</span> Services for <span className="italic">Safer Spaces</span> across Australia
                   </h1>
                   <p className={cn(
                     "text-xl text-muted-foreground leading-relaxed transition-all duration-700 delay-200",
@@ -205,6 +204,19 @@ const ServiceBlock = ({ service, index }: { service: typeof services[0]; index: 
         )}>
           {/* Content */}
           <div className={isEven ? "lg:order-1" : "lg:order-2"}>
+            {/* Logo */}
+            {service.logo && (
+              <div className="mb-6">
+                <Image
+                  src={service.logo}
+                  alt={`${service.title} logo`}
+                  width={200}
+                  height={80}
+                  className="h-auto object-contain"
+                />
+              </div>
+            )}
+            
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center">
                 <Icon className="w-8 h-8 text-accent" />
@@ -231,23 +243,11 @@ const ServiceBlock = ({ service, index }: { service: typeof services[0]; index: 
             </Button>
           </div>
 
-          {/* Image & Features */}
+          {/* Features */}
           <div className={cn(
             "space-y-8",
             isEven ? "lg:order-2" : "lg:order-1"
           )}>
-            {/* Service Image */}
-            {service.image && (
-              <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            )}
-            
             {/* Features */}
             <div className="p-8 rounded-2xl bg-card border border-border">
               <h3 className="font-display font-bold text-xl text-foreground mb-6">

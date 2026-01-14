@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 import { Target, Eye, Heart, Lightbulb } from "lucide-react";
+import Image from "next/image";
 
 const values = [
   {
@@ -91,28 +92,52 @@ export default function About() {
         <section className="py-24 bg-white relative overflow-hidden">
           <div className="max-w-content relative z-10">
             <div className="grid md:grid-cols-2 gap-12">
-              <div className="p-8 md:p-12 rounded-3xl bg-muted/30 backdrop-blur-sm border border-border">
-                <Eye className="w-12 h-12 text-accent mb-6" />
-                <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-                  Our Vision
-                </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  To be the global leader in human capital transformation, 
-                  empowering millions to achieve their full potential and 
-                  contribute meaningfully to their organizations and communities.
-                </p>
+              {/* Vision Card */}
+              <div className="relative h-[500px] rounded-3xl overflow-hidden border border-border">
+                <Image
+                  src="/missionvission/SkillCityVision(D1V1C1).png"
+                  alt="Our Vision"
+                  fill
+                  className="object-cover"
+                />
+                {/* Dark overlay from bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10">
+                  <Eye className="w-12 h-12 text-white mb-6" />
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                    Our Vision
+                  </h3>
+                  <p className="text-white/90 text-lg leading-relaxed">
+                    To be the global leader in human capital transformation, 
+                    empowering millions to achieve their full potential and 
+                    contribute meaningfully to their organizations and communities.
+                  </p>
+                </div>
               </div>
               
-              <div className="p-8 md:p-12 rounded-3xl bg-muted/30 backdrop-blur-sm border border-border">
-                <Target className="w-12 h-12 text-accent mb-6" />
-                <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-                  Our Mission
-                </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  To deliver world-class training, consulting, and development 
-                  solutions that drive measurable impact for our clients while 
-                  maintaining the highest standards of excellence and integrity.
-                </p>
+              {/* Mission Card */}
+              <div className="relative h-[500px] rounded-3xl overflow-hidden border border-border">
+                <Image
+                  src="/missionvission/SkillCityMission(D1V1C1).png"
+                  alt="Our Mission"
+                  fill
+                  className="object-cover"
+                />
+                {/* Dark overlay from bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10">
+                  <Target className="w-12 h-12 text-white mb-6" />
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                    Our Mission
+                  </h3>
+                  <p className="text-white/90 text-lg leading-relaxed">
+                    To deliver world-class training, consulting, and development 
+                    solutions that drive measurable impact for our clients while 
+                    maintaining the highest standards of excellence and integrity.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
