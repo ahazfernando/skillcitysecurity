@@ -417,8 +417,18 @@ export default function CleaningService() {
         </section>
 
         {/* Schedule Your Appointment Today! */}
-        <section id="contact" className="py-24 bg-green-600 text-white">
-          <div className="max-w-content">
+        <section id="contact" className="py-24 bg-green-600 text-white relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/cleanign/Groovy.png"
+              alt="Background Pattern"
+              fill
+              className="object-cover"
+            />
+          </div>
+          
+          <div className="max-w-content relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">
@@ -451,9 +461,12 @@ export default function CleaningService() {
               </div>
               
               <div className="relative h-[600px] rounded-2xl overflow-hidden">
-                <div className="w-full h-full bg-white/10 flex items-center justify-center">
-                  <span className="text-white/60">Cleaner Professional Image</span>
-                </div>
+                <Image
+                  src="/servicestock/Cleaning.jpeg"
+                  alt="Professional Cleaning Service"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute bottom-6 right-6 bg-green-600/90 backdrop-blur-sm px-6 py-4 rounded-xl">
                   <p className="font-bold text-white">100% Satisfaction Guaranteed!</p>
                 </div>
