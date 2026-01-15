@@ -23,8 +23,8 @@ export const WhoWeAreSection = () => {
     },
     { 
       src: "/entity/SkillCityFacilitySolutions(D1V2C1).png", 
-      alt: "Skill City Facility Solutions",
-      href: "/services/cleaning"
+      alt: "Skill City Recruitment",
+      href: "/services/recruitment"
     },
   ];
 

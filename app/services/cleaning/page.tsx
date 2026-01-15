@@ -246,7 +246,7 @@ export default function CleaningService() {
                     <div className="w-16 h-16 rounded-full border-2 border-green-600 flex items-center justify-center mb-4">
                       <Building2 className="w-8 h-8 text-green-600" />
                     </div>
-                    <div className="text-4xl font-display font-bold text-green-600 mb-2">386+</div>
+                    <div className="text-4xl font-display font-bold text-green-600 mb-2">15+</div>
                     <p className="text-sm text-muted-foreground">Glorious Years</p>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ export default function CleaningService() {
         </section>
 
         {/* We Have A Expert Team To Serve You */}
-        <section className="py-24 bg-background">
+        {/* <section className="py-24 bg-background">
           <div className="max-w-content">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-16">
               We Have A <span className="text-green-600">Expert Team To Serve You.</span>
@@ -376,7 +376,7 @@ export default function CleaningService() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Hear What Our Global Clients Say */}
         <section className="py-24 bg-white">
