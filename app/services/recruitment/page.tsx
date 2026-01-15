@@ -3,26 +3,21 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Users, TrendingUp, Shield, Target, FileText, Calendar, CheckCircle2, DollarSign, MessageCircle, Plus, Play, Star, Hash, Leaf, Building2, Wrench, Briefcase } from "lucide-react";
-// @ts-ignore - LogoLoop is a JSX component
+import { ArrowRight, Users, Shield, FileText, Calendar, CheckCircle2, DollarSign, MessageCircle, Plus, Hash, Leaf, Building2, Wrench, Briefcase } from "lucide-react";
 import LogoLoopComponent from "@/components/LogoLoop";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
 const LogoLoop = LogoLoopComponent as any;
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Image from "next/image";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function RecruitmentService() {
-  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
-  const { ref: statsRef, isVisible: statsVisible } = useScrollReveal();
-  const { ref: whoWeAreRef, isVisible: whoWeAreVisible } = useScrollReveal();
-  const { ref: servicesRef, isVisible: servicesVisible } = useScrollReveal();
-  const { ref: howItWorksRef, isVisible: howItWorksVisible } = useScrollReveal();
+  const { ref: heroRef } = useScrollReveal();
+  const { ref: whoWeAreRef } = useScrollReveal();
+  const { ref: servicesRef } = useScrollReveal();
+  const { ref: howItWorksRef } = useScrollReveal();
 
   return (
     <div className="min-h-screen">

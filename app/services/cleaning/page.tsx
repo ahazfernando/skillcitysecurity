@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Home, Building2, Sparkles, CheckCircle, Star, Mail, Phone, MapPin, User, Calendar, MessageSquare, Leaf } from "lucide-react";
+import { ArrowRight, Home, Building2, Sparkles, CheckCircle, Star, User, Calendar, Leaf } from "lucide-react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
