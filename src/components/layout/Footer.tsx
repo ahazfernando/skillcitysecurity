@@ -18,7 +18,6 @@ const footerLinks = {
   ],
   links: [
     { name: "Courses", path: "/services" },
-    { name: "Become Teacher", path: "/contact" },
     { name: "Service", path: "/services" },
     { name: "All in One", path: "/services" },
   ],

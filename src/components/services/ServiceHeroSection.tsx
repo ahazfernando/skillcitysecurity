@@ -59,7 +59,7 @@ export function ServiceHeroSection({
         <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-end">
             {/* Left Content */}
-            <div>
+            <div className="max-w-5xl">
               {welcomeText && (
                 <p className="text-sm mb-4" style={{ color: '#040D11' }}>
                   {welcomeText}{" "}
@@ -71,7 +71,18 @@ export function ServiceHeroSection({
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight" style={{ color: '#040D11' }}>
                 {title}{" "}
                 {titleHighlight && (
-                  <span className="font-medium italic" style={{ color: '#040D11' }}>{titleHighlight}</span>
+                  <span className="font-medium italic" style={{ color: '#040D11' }}>
+                    {titleHighlight.includes('|') ? (
+                      titleHighlight.split('|').map((part, index, array) => (
+                        <span key={index}>
+                          {part}
+                          {index < array.length - 1 && <br />}
+                        </span>
+                      ))
+                    ) : (
+                      titleHighlight
+                    )}
+                  </span>
                 )}
               </h1>
               <p className="font-medium italic mb-8 leading-relaxed" style={{ color: '#040D11' }}>

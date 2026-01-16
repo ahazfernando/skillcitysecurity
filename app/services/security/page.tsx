@@ -22,7 +22,7 @@ export default function SecurityService() {
           welcomeText="Welcome To"
           welcomeHighlight="Skill City Security"
           title="We Specialize"
-          titleHighlight="Security & Protection in Australia"
+          titleHighlight="Security & Protection|in Australia"
           description="Comprehensive security solutions tailored to protect your business, employees, and assets. Our professional security services provide peace of mind through trained personnel, advanced monitoring, and strategic security planning."
           ctaText="Book a Meeting"
           ctaLink="/contact"
