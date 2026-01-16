@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ServiceHeroSection } from "@/components/services/ServiceHeroSection";
+import { SecurityServicesSection } from "@/components/services/SecurityServicesSection";
 import { WhoWeAreSection } from "@/components/services/WhoWeAreSection";
 import { BehindTheHomeSection } from "@/components/services/BehindTheHomeSection";
 import { RealServicesSection } from "@/components/services/RealServicesSection";
@@ -20,13 +21,16 @@ export default function SecurityService() {
           backgroundImage="/cleanign/Header.png"
           welcomeText="Welcome To"
           welcomeHighlight="Skill City Security"
-          title="We Specialize in Professional"
-          titleHighlight="Security & Protection Services Across Australia"
+          title="We Specialize"
+          titleHighlight="Security & Protection in Australia"
           description="Comprehensive security solutions tailored to protect your business, employees, and assets. Our professional security services provide peace of mind through trained personnel, advanced monitoring, and strategic security planning."
           ctaText="Book a Meeting"
           ctaLink="/contact"
           whiteGradientFromBottom={true}
         />
+
+        {/* Security Services Section */}
+        <SecurityServicesSection />
 
         {/* Who We Are Section */}
         <WhoWeAreSection
