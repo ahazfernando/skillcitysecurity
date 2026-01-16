@@ -47,10 +47,10 @@ export const Footer = () => {
             {/* Right: Newsletter Form */}
             <div className="w-full md:w-3/5 p-8 md:p-12 text-white">
               <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                Subscribe to our newsletter to get updates to our latest collections
+                Subscribe to our newsletter to get updates to our Offers
               </h2>
               <p className="text-white/80 mb-6">
-                Get 20% off on your first order just by subscribing to our newsletter
+                Get 20% off on your first contract just by subscribing to our newsletter``
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
@@ -167,22 +167,18 @@ export const Footer = () => {
             <div>
               <h4 className="font-semibold text-gray-800 mb-4">Contact Us</h4>
               <div className="space-y-3">
-                <a href="tel:+919876543254" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
-                  <Phone size={16} className="text-black" />
-                  <span>(91) 98765 4321 54</span>
-                </a>
-                <a href="tel:+919876543255" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
-                  <Phone size={16} className="text-black" />
-                  <span>(91) 98765 4321 55</span>
-                </a>
-                <a href="mailto:support@mail.com" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
-                  <Mail size={16} className="text-black" />
-                  <span>support@mail.com</span>
-                </a>
                 <div className="flex items-start gap-3 text-gray-500 text-sm">
                   <MapPin size={16} className="text-black mt-0.5 flex-shrink-0" />
-                  <span>123 Innovation Street, Suite 100, Sydney, NSW 2000, Australia</span>
+                  <span>4A Haughton Road, Oakleigh, 3166, VIC</span>
                 </div>
+                <a href="tel:+61370447710" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
+                  <Phone size={16} className="text-black" />
+                  <span>037 044 7710</span>
+                </a>
+                <a href="mailto:admin@skillcityfs.com.au" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
+                  <Mail size={16} className="text-black" />
+                  <span>admin@skillcityfs.com.au</span>
+                </a>
               </div>
             </div>
           </div>

@@ -157,7 +157,9 @@ interface PhoneInputProps {
 
 export function PhoneInput({ value = "", onChange, className, required }: PhoneInputProps) {
   const [open, setOpen] = React.useState(false);
-  const [selectedCountry, setSelectedCountry] = React.useState(countries[0]);
+  const [selectedCountry, setSelectedCountry] = React.useState(
+    countries.find(c => c.code === "AU") || countries[0]
+  );
   const [phoneNumber, setPhoneNumber] = React.useState("");
 
   React.useEffect(() => {

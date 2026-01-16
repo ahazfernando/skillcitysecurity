@@ -39,26 +39,26 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    content: "hello@skillcity.com",
+    content: "admin@skillcityfs.com.au",
     description: "We'll respond within 24 hours",
   },
   {
     icon: Phone,
     title: "Call Us",
-    content: "+1 (234) 567-890",
-    description: "Mon-Fri, 9am-6pm EST",
+    content: "037 044 7710",
+    description: "Mon-Fri, 9am-6pm AEST",
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    content: "Global Headquarters",
-    description: "123 Innovation Street, Suite 100",
+    content: "4A Haughton Road",
+    description: "Oakleigh, 3166, VIC",
   },
   {
     icon: Clock,
     title: "Business Hours",
     content: "Monday - Friday",
-    description: "9:00 AM - 6:00 PM EST",
+    description: "9:00 AM - 6:00 PM AEST",
   },
 ];
 

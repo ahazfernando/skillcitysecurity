@@ -5,11 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Users, Shield, FileText, Calendar, CheckCircle2, DollarSign, MessageCircle, Plus, Hash, Leaf, Building2, Wrench, Briefcase } from "lucide-react";
-import LogoLoopComponent from "@/components/LogoLoop";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-const LogoLoop = LogoLoopComponent as any;
+import { ArrowRight, Users, Shield, FileText, Calendar, CheckCircle2, DollarSign, MessageCircle, Plus, Hash, Leaf, Building2, Wrench } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Image from "next/image";
 
@@ -111,47 +107,6 @@ export default function RecruitmentService() {
               height={60}
               className="h-auto object-contain"
             />
-          </div>
-        </section>
-
-        {/* Services Loop Section */}
-        <section className="py-12 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <div style={{ height: '80px', position: 'relative', overflow: 'hidden' }}>
-              <LogoLoop
-                logos={[
-                  { 
-                    node: <Shield className="w-12 h-12 text-white" />, 
-                    title: "Professional Security", 
-                    href: "/services" 
-                  },
-                  { 
-                    node: <Briefcase className="w-12 h-12 text-white" />, 
-                    title: "Facility Solutions", 
-                    href: "/services/cleaning" 
-                  },
-                  { 
-                    node: <Users className="w-12 h-12 text-white" />, 
-                    title: "Recruitment", 
-                    href: "/services/recruitment" 
-                  },
-                  { 
-                    node: <Wrench className="w-12 h-12 text-white" />, 
-                    title: "Plumbing", 
-                    href: "/services" 
-                  },
-                ]}
-                speed={120}
-                direction="left"
-                logoHeight={48}
-                gap={40}
-                hoverSpeed={0}
-                scaleOnHover
-                fadeOut
-                fadeOutColor="#1f2937"
-                ariaLabel="Our services"
-              />
-            </div>
           </div>
         </section>
 
