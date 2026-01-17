@@ -198,6 +198,23 @@ export default function CleaningService() {
           </div>
         </section>
 
+        {/* YouTube Video Section */}
+        <section className="py-24 bg-white relative overflow-hidden">
+          <div className="max-w-content relative z-10">
+            <div className="w-full">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-2xl"
+                  src="https://www.youtube.com/embed/5ogOHHMX6HQ"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Behind The Home Master Company Stories */}
         <section className="py-24 bg-white relative overflow-hidden">
           <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
