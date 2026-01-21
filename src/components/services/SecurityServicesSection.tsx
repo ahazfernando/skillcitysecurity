@@ -24,8 +24,8 @@ const securityServices = [
   },
   {
     id: 3,
-    title: "Access Control Systems",
-    description: "Advanced access control and monitoring solutions to secure your facilities.",
+    title: "24/7 Surveillance",
+    description: "Advanced surveillance and monitoring solutions to secure your facilities day and night.",
     category: "Technology",
     categoryColor: "#f97316",
     topBgColor: "bg-orange-50",

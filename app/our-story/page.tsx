@@ -45,28 +45,40 @@ export default function OurStory() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section ref={heroRef} className="pt-32 pb-20 bg-hero-pattern relative overflow-hidden">
-          <div className="absolute inset-0 bg-mesh-gradient opacity-50" />
-          
+        <section ref={heroRef} className="relative overflow-hidden pt-32 pb-32 min-h-[80vh]">
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url(/securitylogo/OurStory.png)" }}
+          />
+          {/* White Gradient from Bottom */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white pointer-events-none" />
+
           <div className="max-w-content relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className={cn(
-                "inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4 transition-all duration-700",
-                heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              )}>
+              <span
+                className={cn(
+                  "inline-block text-white font-semibold text-sm tracking-wider uppercase mb-4 transition-all duration-700",
+                  heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                )}
+              >
                 Our Story
               </span>
-              <h1 className={cn(
-                "text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.1] mb-8 transition-all duration-700 delay-100",
-                heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              )}>
+              <h1
+                className={cn(
+                  "text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.1] mb-8 transition-all duration-700 delay-100",
+                  heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                )}
+              >
                 A Story of
                 <span className="block mt-2 text-gradient-hero">Transformation</span>
               </h1>
-              <p className={cn(
-                "text-xl text-white/70 leading-relaxed transition-all duration-700 delay-200",
-                heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              )}>
+              <p
+                className={cn(
+                  "text-xl text-white/70 leading-relaxed transition-all duration-700 delay-200",
+                  heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                )}
+              >
                 From a small office with big dreams to a global force for change—
                 this is the story of how we became who we are today.
               </p>
@@ -75,7 +87,7 @@ export default function OurStory() {
         </section>
 
         {/* Intro Quote */}
-        <section className="py-24 bg-background">
+        <section className="py-24 bg-white">
           <div className="max-w-content">
             <div className="max-w-4xl mx-auto text-center relative">
               <Quote className="w-16 h-16 text-accent/20 mx-auto mb-8" />

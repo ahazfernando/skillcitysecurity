@@ -91,7 +91,7 @@ export default function Blog() {
         <section ref={heroRef} className="pt-32 pb-20 relative overflow-hidden bg-white">
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
-            style={{ backgroundImage: 'url(/home/SkillCityBlogs.png)' }}
+            style={{ backgroundImage: 'url(/securitylogo/servicessecuritywidget.png)' }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white" />
           

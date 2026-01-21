@@ -16,8 +16,8 @@ const services = [
   },
   { 
     image: '/securityservices/69313e189e6cccb00bf7871e4c9fd6e5.jpg', 
-    serviceName: 'Access Control Systems',
-    description: 'Advanced access control and monitoring solutions'
+    serviceName: '24/7 Surveillance',
+    description: 'Advanced surveillance and monitoring solutions'
   },
   { 
     image: '/securityservices/086f14eaa0cfccc722c962e3a4bdd284.jpg', 

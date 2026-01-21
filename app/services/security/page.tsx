@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ServiceHeroSection } from "@/components/services/ServiceHeroSection";
 import { SecurityServicesSection } from "@/components/services/SecurityServicesSection";
+import { SecurityServicesTabsSection } from "@/components/services/SecurityServicesTabsSection";
 import { WhoWeAreSection } from "@/components/services/WhoWeAreSection";
 import { BehindTheHomeSection } from "@/components/services/BehindTheHomeSection";
 import { RealServicesSection } from "@/components/services/RealServicesSection";
@@ -31,6 +32,9 @@ export default function SecurityService() {
 
         {/* Security Services Section */}
         <SecurityServicesSection />
+
+        {/* In-depth Services Tabs */}
+        <SecurityServicesTabsSection />
 
         {/* Who We Are Section */}
         <WhoWeAreSection
@@ -81,7 +85,7 @@ export default function SecurityService() {
             { icon: Shield, title: "Security Guard Services", description: "Professional trained security personnel for your premises." },
             { icon: Calendar, title: "Event Security Management", description: "Comprehensive security solutions for events and gatherings." },
             { icon: FileText, title: "Security Assessments", description: "Thorough evaluation and recommendations for your security needs." },
-            { icon: CheckCircle2, title: "Access Control Systems", description: "Advanced access control and monitoring solutions." },
+            { icon: CheckCircle2, title: "24/7 Surveillance", description: "Advanced surveillance and monitoring solutions to protect your facilities at all times." },
           ]}
           accentColor="orange"
         />
