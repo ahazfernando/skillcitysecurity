@@ -9,7 +9,7 @@ import { WhyWeExistSection } from "@/components/home/WhyWeExistSection";
 import { WellnessServicesSection } from "@/components/home/WellnessServicesSection";
 import { IndustriesSection } from "@/components/home/IndustriesSection";
 import ReviewsSection from "@/components/home/ReviewsSection";
-import { ForwardThinkingSection } from "@/components/home/ForwardThinkingSection";
+// import { ForwardThinkingSection } from "@/components/home/ForwardThinkingSection";
 import { ServicesWeProvideSection } from "@/components/home/ServicesWeProvideSection";
 import { FAQSection } from "@/components/home/FAQSection";
 
@@ -27,7 +27,7 @@ export default function Home() {
         <WellnessServicesSection />
         <IndustriesSection />
         <ReviewsSection />
-        <ForwardThinkingSection />
+        {/* <ForwardThinkingSection /> */}
         <ServicesWeProvideSection />
         <FAQSection />
       </main>
