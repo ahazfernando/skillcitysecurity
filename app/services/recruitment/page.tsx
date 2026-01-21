@@ -101,7 +101,7 @@ export default function RecruitmentService() {
           {/* Logo in Bottom Right */}
           <div className="absolute bottom-8 right-8 z-20">
             <Image
-              src="/recruitmen/SkillCityFacilitySolutionWHITELOGO.png"
+              src="/securitylogo/SecurityServices.png"
               alt="Skill City Facility Solutions"
               width={150}
               height={60}

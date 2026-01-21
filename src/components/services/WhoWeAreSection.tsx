@@ -27,7 +27,7 @@ interface WhoWeAreSectionProps {
   featureIcon?: LucideIcon;
   ctaText?: string;
   ctaLink?: string;
-  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue";
+  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue" | "orange";
 }
 
 export function WhoWeAreSection({
@@ -54,6 +54,7 @@ export function WhoWeAreSection({
     "green-600": "bg-green-600",
     "blue-600": "bg-blue-600",
     "custom-blue": "",
+    "orange": "bg-orange-500",
   };
 
   const accentTextClasses = {
@@ -61,6 +62,7 @@ export function WhoWeAreSection({
     "green-600": "text-green-600",
     "blue-600": "text-blue-600",
     "custom-blue": "",
+    "orange": "text-orange-500",
   };
 
   const accentBgLightClasses = {
@@ -68,6 +70,7 @@ export function WhoWeAreSection({
     "green-600": "bg-green-600/10",
     "blue-600": "bg-blue-600/10",
     "custom-blue": "",
+    "orange": "bg-orange-50",
   };
 
   const customBlue = "#36A1D3";

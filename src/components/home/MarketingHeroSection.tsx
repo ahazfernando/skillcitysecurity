@@ -2,18 +2,18 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Building2, Users } from "lucide-react";
+import { Shield, Users } from "lucide-react";
 
 export const MarketingHeroSection = () => {
   const stats = [
     { 
-      value: "500+", 
-      label: "Facilities managed",
-      icon: Building2
+      value: "1K+", 
+      label: "Secured sites",
+      icon: Shield
     },
     { 
-      value: "10K+", 
-      label: "Placements",
+      value: "300+", 
+      label: "Security officers",
       icon: Users
     },
   ];
@@ -29,8 +29,8 @@ export const MarketingHeroSection = () => {
           {/* Left: Image */}
           <div className="relative order-2 lg:order-1 animate-fade-in">
             <img 
-              src="/home/ConstructionHat.png" 
-              alt="Professional construction safety helmet"
+              src="/securitylogo/SecurityOffcier(D1V1).png" 
+              alt="Professional security officer"
               className="w-full h-auto object-contain max-w-lg mx-auto lg:mx-0"
             />
           </div>
@@ -39,14 +39,14 @@ export const MarketingHeroSection = () => {
           <div className="order-1 lg:order-2">
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-display font-bold text-foreground leading-[1.15] mb-6 animate-fade-in">
-              Comprehensive Facility
-              <span className="block mt-1">Solutions & Recruitment</span>
+              Professional Security
+              <span className="block mt-1">Services & Protection</span>
             </h1>
             
             {/* Description */}
             <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-md animate-fade-in" style={{ animationDelay: '100ms' }}>
-              We provide end-to-end facility management solutions and expert recruitment services to help 
-              your business operate efficiently and build exceptional teams.
+              We provide comprehensive security solutions and expert security services to help 
+              protect your business, employees, and assets with professional security officers and advanced security systems.
             </p>
             
             {/* CTA Buttons */}
@@ -55,7 +55,7 @@ export const MarketingHeroSection = () => {
                 variant="default" 
                 size="lg" 
                 asChild
-                className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6"
+                className="bg-orange-500 text-white hover:bg-orange-600 rounded-full px-6"
               >
                 <Link href="/contact">
                   Let&apos;s talk

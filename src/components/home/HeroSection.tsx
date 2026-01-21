@@ -52,7 +52,7 @@ export const HeroSection = () => {
                 variant="default" 
                 size="lg" 
                 asChild
-                className="bg-foreground text-background hover:bg-foreground/90 rounded-[16px] h-12 px-6"
+                className="bg-orange-500 text-white hover:bg-orange-600 rounded-[16px] h-12 px-6"
               >
                 <Link href="/contact">
                   Book a Consultation

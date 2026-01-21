@@ -9,8 +9,8 @@ const securityServices = [
     title: "Security Guard Services",
     description: "Professional trained security personnel for your premises, events, and facilities.",
     category: "Protection",
-    categoryColor: "#36A1D3",
-    topBgColor: "bg-blue-50",
+    categoryColor: "#f97316",
+    topBgColor: "bg-orange-50",
     image: "/servicessecurity/28f0dd7c26a20f5a0647f1070f5af947.jpg",
   },
   {
@@ -18,8 +18,8 @@ const securityServices = [
     title: "Event Security Management",
     description: "Comprehensive security solutions for events, gatherings, and special occasions.",
     category: "Events",
-    categoryColor: "#36A1D3",
-    topBgColor: "bg-blue-50",
+    categoryColor: "#f97316",
+    topBgColor: "bg-orange-50",
     image: "/servicessecurity/abd95df86f099e14285d3ff3fd1251e4.jpg",
   },
   {
@@ -27,8 +27,8 @@ const securityServices = [
     title: "Access Control Systems",
     description: "Advanced access control and monitoring solutions to secure your facilities.",
     category: "Technology",
-    categoryColor: "#36A1D3",
-    topBgColor: "bg-blue-50",
+    categoryColor: "#f97316",
+    topBgColor: "bg-orange-50",
     image: "/servicessecurity/27c74718ca7236e2447a37560fb43a5e.jpg",
   },
   {
@@ -36,8 +36,8 @@ const securityServices = [
     title: "Security Assessments",
     description: "Thorough evaluation and recommendations for your security needs and vulnerabilities.",
     category: "Consulting",
-    categoryColor: "#36A1D3",
-    topBgColor: "bg-blue-50",
+    categoryColor: "#f97316",
+    topBgColor: "bg-orange-50",
     image: "/servicessecurity/3c0b5dc4a3e34a3efa83a8dcfad4cac2.jpg",
   },
 ];

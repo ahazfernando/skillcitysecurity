@@ -18,11 +18,11 @@ export default function SecurityService() {
       <main>
         {/* Hero Section */}
         <ServiceHeroSection
-          backgroundImage="/cleanign/Header.png"
+          backgroundImage="/securitylogo/63.png"
           welcomeText="Welcome To"
           welcomeHighlight="Skill City Security"
           title="We Specialize"
-          titleHighlight="Security & Protection|in Australia"
+          titleHighlight="Security & Protection"
           description="Comprehensive security solutions tailored to protect your business, employees, and assets. Our professional security services provide peace of mind through trained personnel, advanced monitoring, and strategic security planning."
           ctaText="Book a Meeting"
           ctaLink="/contact"
@@ -49,7 +49,7 @@ export default function SecurityService() {
           featureTitle="Professional Security Personnel"
           featureDescription="Our highly trained security guards are equipped with the latest security protocols and technology to ensure your property and people are always protected."
           featureIcon={Shield}
-          accentColor="custom-blue"
+          accentColor="orange"
         />
 
         {/* Behind The Home Master Company Stories */}
@@ -67,7 +67,7 @@ export default function SecurityService() {
           image="/services/dab71de9b4112fadbb7208c430841d67.jpg"
           imageAlt="Security Professional"
           mirrorImage={true}
-          accentColor="custom-blue"
+          accentColor="orange"
         />
 
         {/* Real Security Services For You Section */}
@@ -83,7 +83,7 @@ export default function SecurityService() {
             { icon: FileText, title: "Security Assessments", description: "Thorough evaluation and recommendations for your security needs." },
             { icon: CheckCircle2, title: "Access Control Systems", description: "Advanced access control and monitoring solutions." },
           ]}
-          accentColor="custom-blue"
+          accentColor="orange"
         />
 
         {/* How It Works Section */}
@@ -114,7 +114,7 @@ export default function SecurityService() {
               text: "text-gray-900"
             },
           ]}
-          accentColor="custom-blue"
+          accentColor="orange"
         />
 
         {/* FAQ Section */}
@@ -141,7 +141,7 @@ export default function SecurityService() {
               answer: "Absolutely. We offer 24/7 security monitoring and response services to ensure your property and assets are protected around the clock. Our security personnel and monitoring systems work continuously to provide maximum protection.",
             },
           ]}
-          accentColor="custom-blue"
+          accentColor="orange"
         />
 
       </main>

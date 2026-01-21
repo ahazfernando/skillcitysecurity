@@ -29,33 +29,22 @@ const faqs = [
 
 export const FAQSection = () => {
   return (
-    <section 
-      className="py-24 relative"
-      style={{ 
-        backgroundColor: '#EBF5FF',
-        backgroundImage: 'url(/faq/faqsection.png)',
-        backgroundSize: 'auto 300px',
-        backgroundPosition: 'top left',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      {/* Overlay to reduce image opacity */}
-      <div className="absolute inset-0 bg-[#EBF5FF]/30 pointer-events-none" />
+    <section className="py-24 relative bg-white">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Panel */}
           <div className="flex flex-col">
             {/* Badge */}
             <div className="flex items-center gap-2 mb-4">
-              <HelpCircle className="w-5 h-5 text-accent" />
-              <span className="text-accent font-semibold text-sm tracking-wider uppercase">
+              <HelpCircle className="w-5 h-5 text-orange-500" />
+              <span className="text-orange-500 font-semibold text-sm tracking-wider uppercase">
                 Your Questions, Answered
               </span>
             </div>
 
             {/* Title */}
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Frequently Asked Questions
+              Need to know more about our services ?
             </h2>
 
             {/* Description */}
@@ -68,11 +57,14 @@ export const FAQSection = () => {
             <div 
               className="mt-auto p-6 rounded-2xl relative overflow-hidden shadow-sm"
               style={{
-                backgroundImage: 'url(/services/f4b9be0137f95fee0d3aab054d151d3b.jpg)',
+                backgroundImage: 'url(/securitylogo/1095049ddf7da0b134011049af88e46c.jpg)',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
               }}
             >
+              {/* Overlay to reduce image opacity */}
+              <div className="absolute inset-0 bg-white/60 z-0"></div>
               {/* Content */}
               <div className="relative z-10">
                 <h3 className="text-xl font-semibold text-foreground mb-3">
@@ -81,7 +73,7 @@ export const FAQSection = () => {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   Our support team is here to help. Get in touch with us and we&apos;ll respond within 24 hours.
                 </p>
-                <Button className="bg-accent hover:bg-accent/90 text-white">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white">
                   Book a Free Consultation
                 </Button>
               </div>

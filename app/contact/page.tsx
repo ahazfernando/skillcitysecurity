@@ -119,14 +119,14 @@ export default function Contact() {
         <section ref={heroRef} className="pt-32 pb-20 relative overflow-hidden bg-white">
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
-            style={{ backgroundImage: 'url(/home/contactussection.png)' }}
+            style={{ backgroundImage: 'url(/securitylogo/62.png)' }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white" />
           
           <div className="max-w-content relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <span className={cn(
-                "inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4 transition-all duration-700",
+                "inline-block text-orange-500 font-semibold text-sm tracking-wider uppercase mb-4 transition-all duration-700",
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}>
                 Contact Us
@@ -136,7 +136,7 @@ export default function Contact() {
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}>
                 Let&apos;s <span className="italic font-medium">Start</span> a
-                <span className="block mt-2 text-accent">Conversation <span className="italic font-medium">today</span></span>
+                <span className="block mt-2 text-orange-500">Conversation <span className="italic font-medium">today</span></span>
               </h1>
               <p className={cn(
                 "text-xl text-muted-foreground leading-relaxed transition-all duration-700 delay-200",
@@ -160,8 +160,8 @@ export default function Contact() {
                     key={index}
                     className="p-6 rounded-2xl bg-muted/50 hover:bg-muted transition-colors group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                      <Icon className="w-6 h-6 text-accent" />
+                    <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
+                      <Icon className="w-6 h-6 text-orange-500" />
                     </div>
                     <h3 className="font-display font-semibold text-foreground mb-1">
                       {item.title}
@@ -188,12 +188,12 @@ export default function Contact() {
                 "transition-all duration-700",
                 formVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
               )}>
-                <span className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4">
+                <span className="inline-block text-orange-500 font-semibold text-sm tracking-wider uppercase mb-4">
                   Get in Touch
                 </span>
                 <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground leading-[1.1] mb-6">
                   Ready to Transform
-                  <span className="block mt-2 text-accent">Your Organization?</span>
+                  <span className="block mt-2 text-orange-500">Your Organization?</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                   Fill out the form and our team will get back to you within 24 hours. 
@@ -202,15 +202,15 @@ export default function Contact() {
                 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
+                    <div className="w-2 h-2 rounded-full bg-orange-500" />
                     <span className="text-muted-foreground">Free initial consultation</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
+                    <div className="w-2 h-2 rounded-full bg-orange-500" />
                     <span className="text-muted-foreground">Customized solutions</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
+                    <div className="w-2 h-2 rounded-full bg-orange-500" />
                     <span className="text-muted-foreground">Expert guidance</span>
                   </div>
                 </div>

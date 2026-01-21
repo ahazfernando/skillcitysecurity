@@ -57,7 +57,7 @@ export const TestimonialsSection = () => {
   return (
     <section ref={sectionRef} className="py-32 bg-gradient-to-b from-background to-muted/50 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-accent/5 blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-orange-500/5 blur-3xl" />
       
       <div className="max-w-content relative z-10">
         {/* Header */}
@@ -66,9 +66,9 @@ export const TestimonialsSection = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-px w-12 bg-accent" />
-            <span className="text-accent font-semibold text-sm tracking-widest uppercase">Testimonials</span>
-            <div className="h-px w-12 bg-accent" />
+            <div className="h-px w-12 bg-orange-500" />
+            <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase">Testimonials</span>
+            <div className="h-px w-12 bg-orange-500" />
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-foreground leading-[1.1]">
@@ -83,10 +83,10 @@ export const TestimonialsSection = () => {
         )}>
           <div className="relative bg-card rounded-[2.5rem] border border-border/50 shadow-2xl p-10 md:p-16 overflow-hidden">
             {/* Background gradient */}
-            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-accent/10 to-transparent rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-orange-500/10 to-transparent rounded-full blur-3xl" />
             
             {/* Quote icon */}
-            <Quote className="absolute top-10 left-10 w-16 h-16 text-accent/10" />
+            <Quote className="absolute top-10 left-10 w-16 h-16 text-orange-500/10" />
             
             {/* Content */}
             <div className="relative">
@@ -105,7 +105,7 @@ export const TestimonialsSection = () => {
               {/* Author */}
               <div className="flex items-center justify-between flex-wrap gap-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white font-display font-bold text-2xl shadow-lg">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-display font-bold text-2xl shadow-lg">
                     {testimonials[currentIndex].author.charAt(0)}
                   </div>
                   <div>
@@ -129,7 +129,7 @@ export const TestimonialsSection = () => {
                         className={cn(
                           "h-2 rounded-full transition-all duration-300",
                           index === currentIndex 
-                            ? "w-8 bg-accent" 
+                            ? "w-8 bg-orange-500" 
                             : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
                         )}
                       />
@@ -140,13 +140,13 @@ export const TestimonialsSection = () => {
                   <div className="flex gap-2 ml-4">
                     <button
                       onClick={prevTestimonial}
-                      className="w-12 h-12 rounded-xl border border-border bg-background flex items-center justify-center hover:bg-muted hover:border-accent/30 transition-all duration-300"
+                      className="w-12 h-12 rounded-xl border border-border bg-background flex items-center justify-center hover:bg-muted hover:border-orange-500/30 transition-all duration-300"
                     >
                       <ChevronLeft className="w-5 h-5" />
                     </button>
                     <button
                       onClick={nextTestimonial}
-                      className="w-12 h-12 rounded-xl border border-border bg-background flex items-center justify-center hover:bg-muted hover:border-accent/30 transition-all duration-300"
+                      className="w-12 h-12 rounded-xl border border-border bg-background flex items-center justify-center hover:bg-muted hover:border-orange-500/30 transition-all duration-300"
                     >
                       <ChevronRight className="w-5 h-5" />
                     </button>

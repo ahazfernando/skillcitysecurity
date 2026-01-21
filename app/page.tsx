@@ -7,7 +7,9 @@ import DestinationsGallery from "@/components/home/DestinationsGallery";
 import { MarketingHeroSection } from "@/components/home/MarketingHeroSection";
 import { WhyWeExistSection } from "@/components/home/WhyWeExistSection";
 import { WellnessServicesSection } from "@/components/home/WellnessServicesSection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { IndustriesSection } from "@/components/home/IndustriesSection";
+import ReviewsSection from "@/components/home/ReviewsSection";
+import { ForwardThinkingSection } from "@/components/home/ForwardThinkingSection";
 import { FAQSection } from "@/components/home/FAQSection";
 
 export default function Home() {
@@ -16,13 +18,15 @@ export default function Home() {
       <Navbar />
       <main>
         <ModernHeaderSection />
-        <HeroSection />
+        {/* <HeroSection /> */}
         <WhoWeAreSection />
         <DestinationsGallery />
         <MarketingHeroSection />
         <WhyWeExistSection />
         <WellnessServicesSection />
-        <TestimonialsSection />
+        <IndustriesSection />
+        <ReviewsSection />
+        <ForwardThinkingSection />
         <FAQSection />
       </main>
       <Footer />

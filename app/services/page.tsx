@@ -17,7 +17,7 @@ const services = [
     description: "Professional facility management services designed to maintain and enhance your business spaces. From maintenance to property management, we ensure your facilities operate at peak efficiency and provide safe, comfortable environments for your operations.",
     icon: Building2,
     image: "/services/interiorhouse(D1V1).jpg",
-    logo: "/entity/SkillCityFacilitySolutions(D1V1C1).png",
+    logo: "/securitylogo/SecurityServices.png",
     features: [
       "Property maintenance and repairs",
       "Cleaning and janitorial services",
@@ -39,7 +39,7 @@ const services = [
     description: "Expert recruitment services that connect exceptional talent with outstanding opportunities across all industries. We specialize in finding the right candidates who not only meet your requirements but also align with your company culture and values.",
     icon: Users,
     image: "/services/recreuitment.jpg",
-    logo: "/entity/SkillCityFacilitySolutions(D1V2C1).png",
+    logo: "/securitylogo/SecurityServices.png",
     features: [
       "Comprehensive candidate sourcing",
       "Skills assessment and screening",

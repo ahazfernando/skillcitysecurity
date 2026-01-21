@@ -18,7 +18,7 @@ interface RealServicesSectionProps {
   image: string;
   imageAlt: string;
   services: Service[];
-  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue";
+  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue" | "orange";
 }
 
 export function RealServicesSection({
@@ -37,6 +37,7 @@ export function RealServicesSection({
     "green-600": "text-green-600",
     "blue-600": "text-blue-600",
     "custom-blue": "",
+    "orange": "text-orange-500",
   };
 
   const accentBgClasses = {
@@ -44,6 +45,7 @@ export function RealServicesSection({
     "green-600": "bg-green-600",
     "blue-600": "bg-blue-600",
     "custom-blue": "",
+    "orange": "bg-orange-500",
   };
 
   const accentBgLightClasses = {
@@ -51,6 +53,7 @@ export function RealServicesSection({
     "green-600": "bg-green-600/10",
     "blue-600": "bg-blue-600/10",
     "custom-blue": "",
+    "orange": "bg-orange-50",
   };
 
   const customBlue = "#36A1D3";

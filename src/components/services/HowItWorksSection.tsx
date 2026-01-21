@@ -17,7 +17,7 @@ interface HowItWorksSectionProps {
   title: string;
   description: string;
   steps: Step[];
-  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue";
+  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue" | "orange";
 }
 
 export function HowItWorksSection({
@@ -34,6 +34,7 @@ export function HowItWorksSection({
     "green-600": "bg-green-600",
     "blue-600": "bg-blue-600",
     "custom-blue": "",
+    "orange": "bg-orange-500",
   };
 
   const accentBgLightClasses = {
@@ -41,6 +42,7 @@ export function HowItWorksSection({
     "green-600": "bg-green-600/10",
     "blue-600": "bg-blue-600/10",
     "custom-blue": "",
+    "orange": "bg-orange-50",
   };
 
   const accentTextClasses = {
@@ -48,6 +50,7 @@ export function HowItWorksSection({
     "green-600": "text-green-600",
     "blue-600": "text-blue-600",
     "custom-blue": "",
+    "orange": "text-orange-500",
   };
 
   const customBlue = "#36A1D3";

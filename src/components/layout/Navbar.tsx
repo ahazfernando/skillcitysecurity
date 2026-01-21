@@ -17,10 +17,7 @@ const navLinks = [
 ];
 
 const quickLinks = [
-  { name: "Facility Solutions", path: "/services/cleaning", icon: Building2, description: "Comprehensive facility management services to maintain and enhance your business spaces." },
-  { name: "Recruitment", path: "/services/recruitment", icon: Users, description: "Expert recruitment services connecting exceptional talent with outstanding opportunities." },
   { name: "Security Services", path: "/services/security", icon: Shield, description: "Professional security services to protect your people, property, and assets." },
-  { name: "Plumbing Services", path: "/services/plumbing", icon: Wrench, description: "Licensed plumbing services for residential and commercial properties." },
 ];
 
 const otherPages = [
@@ -110,7 +107,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/home/SkillCityGroupofComapniesLogo.png"
+              src="/securitylogo/SkillCitySecurity.png"
               alt="Skill City Logo"
               className="h-8 sm:h-10 w-auto"
             />
@@ -131,7 +128,7 @@ export const Navbar = () => {
                       className={cn(
                         "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-1",
                         isActive(link.path) || servicesMenuOpen
-                          ? "bg-primary text-white"
+                          ? "bg-orange-500 text-white"
                           : "text-gray-600 hover:text-gray-900 hover:bg-white dark:text-gray-300 dark:hover:text-white"
                       )}
                     >
@@ -163,9 +160,9 @@ export const Navbar = () => {
                             <div className="flex">
                           {/* Left Panel - Background Image */}
                           <div 
-                            className="w-1/3 bg-primary p-8 flex flex-col justify-between rounded-l-2xl relative overflow-hidden"
+                            className="w-1/3 bg-orange-500 p-8 flex flex-col justify-between rounded-l-2xl relative overflow-hidden"
                             style={{
-                              backgroundImage: 'url(/recruitmen/220895530d23643e410218c4ad9613ec.jpg)',
+                              backgroundImage: 'url(/securitylogo/servicessecuritywidget.png)',
                               backgroundSize: 'cover',
                               backgroundPosition: 'center',
                               backgroundRepeat: 'no-repeat'
@@ -177,7 +174,7 @@ export const Navbar = () => {
                               </h3>
                             </div>
                             <Button
-                              className="rounded-lg bg-white hover:bg-white/90 text-primary w-full mt-6 relative z-10"
+                              className="rounded-lg bg-white hover:bg-white/90 text-orange-500 w-full mt-6 relative z-10"
                               asChild
                             >
                               <Link href="/contact">Book a Free Consultation</Link>
@@ -202,11 +199,11 @@ export const Navbar = () => {
                                         className="flex items-start gap-3 group"
                                         onClick={() => setServicesMenuOpen(false)}
                                       >
-                                        <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors">
-                                          <Icon className="w-5 h-5 text-accent" />
+                                        <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-200 transition-colors">
+                                          <Icon className="w-5 h-5 text-orange-500" />
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                          <div className="text-gray-900 font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                                          <div className="text-gray-900 font-medium text-sm mb-1 group-hover:text-orange-500 transition-colors">
                                             {quickLink.name}
                                           </div>
                                           <div className="text-gray-500 text-xs leading-relaxed">
@@ -234,11 +231,11 @@ export const Navbar = () => {
                                         className="flex items-start gap-3 group"
                                         onClick={() => setServicesMenuOpen(false)}
                                       >
-                                        <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors">
-                                          <Icon className="w-5 h-5 text-accent" />
+                                        <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-200 transition-colors">
+                                          <Icon className="w-5 h-5 text-orange-500" />
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                          <div className="text-gray-900 font-medium text-sm mb-1 group-hover:text-primary transition-colors">
+                                          <div className="text-gray-900 font-medium text-sm mb-1 group-hover:text-orange-500 transition-colors">
                                             {page.name}
                                           </div>
                                           <div className="text-gray-500 text-xs leading-relaxed">
@@ -268,7 +265,7 @@ export const Navbar = () => {
                   className={cn(
                     "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
                     isActive(link.path)
-                      ? "bg-primary text-white"
+                      ? "bg-orange-500 text-white"
                       : "text-gray-600 hover:text-gray-900 hover:bg-white dark:text-gray-300 dark:hover:text-white"
                   )}
                 >
@@ -281,7 +278,7 @@ export const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center">
             <Button
-              className="rounded-full bg-primary hover:bg-primary/90 text-white gap-2"
+              className="rounded-full bg-orange-500 hover:bg-orange-600 text-white gap-2"
               asChild
             >
               <Link href="/contact">
@@ -316,7 +313,7 @@ export const Navbar = () => {
                     className={cn(
                       "px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 flex items-center justify-between",
                       isActive(link.path)
-                        ? "bg-primary text-white"
+                        ? "bg-orange-500 text-white"
                         : "text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800"
                     )}
                   >
@@ -329,7 +326,7 @@ export const Navbar = () => {
                           key={`mobile-quick-${quickLink.name}-${index}`}
                           href={quickLink.path}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="block px-3 py-2 text-xs text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors"
+                          className="block px-3 py-2 text-xs text-gray-600 hover:text-orange-500 hover:bg-gray-50 rounded-lg transition-colors"
                         >
                           {quickLink.name}
                         </Link>
@@ -341,7 +338,7 @@ export const Navbar = () => {
             </nav>
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
               <Button
-                className="rounded-full bg-primary hover:bg-primary/90 text-white gap-2 w-full"
+                className="rounded-full bg-orange-500 hover:bg-orange-600 text-white gap-2 w-full"
                 asChild
               >
                 <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>

@@ -28,7 +28,15 @@ export const Footer = () => {
     <footer className="bg-[hsl(220,20%,96%)]">
       {/* Newsletter Section */}
       <div className="max-w-content -mb-8 pt-24">
-        <div className="bg-[hsl(217,89%,61%)] rounded-2xl overflow-visible relative">
+        <div 
+          className="rounded-2xl overflow-visible relative"
+          style={{
+            backgroundImage: 'url(/securitylogo/Newletterbg.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
           <div className="flex flex-col md:flex-row items-end">
             {/* Left: Image */}
             <div className="w-full md:w-2/5 relative flex items-end justify-center">
@@ -37,9 +45,11 @@ export const Footer = () => {
               <div className="absolute top-8 right-8 text-white text-lg z-10">✦</div>
               <div className="absolute bottom-16 left-8 text-white text-sm z-10">✦</div>
               <img 
-                src="/footer/ChatGPT Image Jan 7, 2026, 10_07_24 AM.png" 
+                src="/securityservices/weas.png" 
+                
+
                 alt="Newsletter illustration"
-                className="w-80 h-auto object-contain -mt-24 block"
+                className="w-full h-auto object-contain -mt-24 block"
               />
             </div>
             
@@ -61,7 +71,7 @@ export const Footer = () => {
                     className="w-full pl-12 pr-4 py-3 rounded-full bg-white text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30"
                   />
                 </div>
-                <button className="px-8 py-3 rounded-full bg-white text-[hsl(217,89%,61%)] font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
+                <button className="px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">
                   Subscribe
                 </button>
               </div>
@@ -84,7 +94,7 @@ export const Footer = () => {
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center mb-4">
                 <img
-                  src="/home/SkillCityGroupofComapniesLogo.png"
+                  src="/securitylogo/SkillCitySecurity.png"
                   alt="Skill City Logo"
                   className="h-10 w-auto"
                 />

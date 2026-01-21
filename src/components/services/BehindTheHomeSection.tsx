@@ -24,7 +24,7 @@ interface BehindTheHomeSectionProps {
   image: string;
   imageAlt: string;
   mirrorImage?: boolean;
-  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue";
+  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue" | "orange";
 }
 
 export function BehindTheHomeSection({
@@ -46,6 +46,7 @@ export function BehindTheHomeSection({
     "green-600": "text-green-600",
     "blue-600": "text-blue-600",
     "custom-blue": "",
+    "orange": "text-orange-500",
   };
 
   const customBlue = "#36A1D3";

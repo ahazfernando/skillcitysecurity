@@ -19,7 +19,7 @@ interface ServiceFAQSectionProps {
   faqs: FAQ[];
   ctaText?: string;
   ctaLink?: string;
-  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue";
+  accentColor?: "accent" | "green-600" | "blue-600" | "custom-blue" | "orange";
 }
 
 export function ServiceFAQSection({
@@ -37,6 +37,7 @@ export function ServiceFAQSection({
     "green-600": "bg-green-600 hover:bg-green-600/90",
     "blue-600": "bg-blue-600 hover:bg-blue-600/90",
     "custom-blue": "",
+    "orange": "bg-orange-500 hover:bg-orange-600",
   };
 
   const accentBgLightClasses = {
@@ -44,6 +45,7 @@ export function ServiceFAQSection({
     "green-600": "bg-green-600/10",
     "blue-600": "bg-blue-600/10",
     "custom-blue": "",
+    "orange": "bg-orange-50",
   };
 
   const accentTextClasses = {
@@ -51,6 +53,7 @@ export function ServiceFAQSection({
     "green-600": "text-green-600",
     "blue-600": "text-blue-600",
     "custom-blue": "",
+    "orange": "text-orange-500",
   };
 
   const customBlue = "#36A1D3";

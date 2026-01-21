@@ -68,10 +68,10 @@ export function ServiceHeroSection({
                   )}
                 </p>
               )}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight" style={{ color: '#040D11' }}>
-                {title}{" "}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
+                <span className="text-orange-400">{title}</span>{" "}
                 {titleHighlight && (
-                  <span className="font-medium italic" style={{ color: '#040D11' }}>
+                  <span className="font-medium italic text-orange-400">
                     {titleHighlight.includes('|') ? (
                       titleHighlight.split('|').map((part, index, array) => (
                         <span key={index}>

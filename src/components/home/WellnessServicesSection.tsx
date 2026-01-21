@@ -11,8 +11,8 @@ const services = [
     title: "Recruitment Services",
     description: "Connect exceptional talent with outstanding opportunities across all industries.",
     category: "Talent",
-    categoryColor: "bg-blue-500",
-    topBgColor: "bg-blue-50 dark:bg-blue-950/20",
+    categoryColor: "bg-orange-500",
+    topBgColor: "bg-orange-50 dark:bg-orange-950/20",
     image: "/servicestock/Recruitment.png",
   },
   {
@@ -20,8 +20,8 @@ const services = [
     title: "Construction Experts",
     description: "Comprehensive construction and facility management services for your projects.",
     category: "Construction",
-    categoryColor: "bg-blue-500",
-    topBgColor: "bg-blue-50 dark:bg-blue-950/20",
+    categoryColor: "bg-orange-500",
+    topBgColor: "bg-orange-50 dark:bg-orange-950/20",
     image: "/servicestock/Construction.png",
   },
   {
@@ -29,8 +29,8 @@ const services = [
     title: "Cleaning Services",
     description: "Professional cleaning and maintenance solutions to keep your facilities spotless.",
     category: "Facility",
-    categoryColor: "bg-blue-500",
-    topBgColor: "bg-blue-50 dark:bg-blue-950/20",
+    categoryColor: "bg-orange-500",
+    topBgColor: "bg-orange-50 dark:bg-orange-950/20",
     image: "/servicestock/Cleaning.jpeg",
   },
   {
@@ -38,8 +38,8 @@ const services = [
     title: "Culinary Services",
     description: "Expert chefs and culinary professionals for your hospitality and catering needs.",
     category: "Culinary",
-    categoryColor: "bg-blue-500",
-    topBgColor: "bg-blue-50 dark:bg-blue-950/20",
+    categoryColor: "bg-orange-500",
+    topBgColor: "bg-orange-50 dark:bg-orange-950/20",
     image: "/servicestock/Chefs.png",
   },
 ];
@@ -101,7 +101,7 @@ export const WellnessServicesSection = () => {
               <div className="p-4 bg-card border-t border-border">
                 <Button
                   variant="ghost"
-                  className="w-full justify-between group-hover:bg-accent/10"
+                  className="w-full justify-between group-hover:bg-orange-50"
                   asChild
                 >
                   <Link href={`/services/${service.id}`}>
