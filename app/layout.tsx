@@ -6,8 +6,14 @@ import { Providers } from "./providers";
 import "../src/index.css";
 
 export const metadata: Metadata = {
-  title: "Skill City Group - Transforming Potential Into Performance",
-  description: "Leading provider of corporate training, skills development, and strategic consulting services.",
+  metadataBase: new URL('https://skillcityfs.com.au'),
+  title: "Skill City Group - Facility Solutions & Security Services in Victoria",
+  description: "Leading provider of corporate training, facility solutions, professional plumbing, and security services across Victoria, Australia.",
+  keywords: ["Facility Solutions Victoria", "Security Services Melbourne", "Professional Plumbing Victoria", "Recruitment Services Melbourne", "Skill City Group"],
+  openGraph: {
+    locale: 'en_AU',
+    type: 'website',
+  }
 };
 
 export default function RootLayout({
