@@ -39,7 +39,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    content: "admin@skillcityfs.com.au",
+    content: "admin@skillcitysecurity.com.au",
     description: "We'll respond within 24 hours",
   },
   {
@@ -80,7 +80,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       // Save to Firebase
       await addDoc(collection(db, "inquiries"), {
@@ -88,12 +88,12 @@ export default function Contact() {
         timestamp: new Date(),
         status: "new",
       });
-      
+
       toast({
         title: "Message sent!",
         description: "We'll get back to you as soon as possible.",
       });
-      
+
       setFormData({ name: "", email: "", company: "", phone: "", state: "", postcode: "", services: [], message: "" });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -117,12 +117,12 @@ export default function Contact() {
       <main>
         {/* Hero Section */}
         <section ref={heroRef} className="pt-32 pb-20 relative overflow-hidden bg-white">
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
             style={{ backgroundImage: 'url(/securitylogo/62.png)' }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white" />
-          
+
           <div className="max-w-content relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <span className={cn(
@@ -142,7 +142,7 @@ export default function Contact() {
                 "text-xl text-muted-foreground leading-relaxed transition-all duration-700 delay-200",
                 heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}>
-                Have a question, need more information, or ready to get started? 
+                Have a question, need more information, or ready to get started?
                 We&apos;d love to hear from you.
               </p>
             </div>
@@ -196,10 +196,10 @@ export default function Contact() {
                   <span className="block mt-2 text-orange-500">Your Organization?</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Fill out the form and our team will get back to you within 24 hours. 
+                  Fill out the form and our team will get back to you within 24 hours.
                   We&apos;re here to help you achieve your goals.
                 </p>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-orange-500" />
@@ -253,7 +253,7 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="grid sm:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
@@ -325,7 +325,7 @@ export default function Contact() {
                       required
                     />
                   </div>
-                  
+
                   <div className="mb-6">
                     <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                       Your Message
@@ -341,11 +341,11 @@ export default function Contact() {
                       className="resize-none"
                     />
                   </div>
-                  
-                  <Button 
-                    type="submit" 
-                    variant="gradient" 
-                    size="lg" 
+
+                  <Button
+                    type="submit"
+                    variant="gradient"
+                    size="lg"
                     className="w-full"
                     disabled={isSubmitting}
                   >

@@ -28,7 +28,7 @@ export const Footer = () => {
     <footer className="bg-[hsl(220,20%,96%)]">
       {/* Newsletter Section */}
       <div className="max-w-content -mb-8 pt-24">
-        <div 
+        <div
           className="rounded-2xl overflow-visible relative"
           style={{
             backgroundImage: 'url(/securitylogo/Newletterbg.png)',
@@ -44,15 +44,15 @@ export const Footer = () => {
               <div className="absolute top-0 left-12 text-white text-2xl z-10">✦</div>
               <div className="absolute top-8 right-8 text-white text-lg z-10">✦</div>
               <div className="absolute bottom-16 left-8 text-white text-sm z-10">✦</div>
-              <img 
-                src="/securityservices/weas.png" 
-                
+              <img
+                src="/securityservices/weas.png"
+
 
                 alt="Newsletter illustration"
                 className="w-full h-auto object-contain -mt-24 block"
               />
             </div>
-            
+
             {/* Right: Newsletter Form */}
             <div className="w-full md:w-3/5 p-8 md:p-12 text-white">
               <h2 className="text-2xl md:text-3xl font-bold mb-3">
@@ -61,7 +61,7 @@ export const Footer = () => {
               <p className="text-white/80 mb-6">
                 Get 20% off on your first contract just by subscribing to our newsletter``
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <div className="flex-1 relative">
                   <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
@@ -75,7 +75,7 @@ export const Footer = () => {
                   Subscribe
                 </button>
               </div>
-              
+
               <p className="text-white/70 text-sm">
                 You will be able to unsubscribe at any time.
                 <br />
@@ -184,9 +184,9 @@ export const Footer = () => {
                   <Phone size={16} className="text-black" />
                   <span>037 044 7710</span>
                 </a>
-                <a href="mailto:admin@skillcityfs.com.au" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
+                <a href="mailto:admin@skillcitysecurity.com.au" className="flex items-center gap-3 text-gray-500 hover:text-[hsl(217,89%,61%)] transition-colors text-sm">
                   <Mail size={16} className="text-black" />
-                  <span>admin@skillcityfs.com.au</span>
+                  <span>admin@skillcitysecurity.com.au</span>
                 </a>
               </div>
             </div>

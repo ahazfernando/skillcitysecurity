@@ -6,13 +6,20 @@ import { Providers } from "./providers";
 import "../src/index.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://skillcityfs.com.au'),
-  title: "Skill City Group - Facility Solutions & Security Services in Victoria",
-  description: "Leading provider of corporate training, facility solutions, professional plumbing, and security services across Victoria, Australia.",
-  keywords: ["Facility Solutions Victoria", "Security Services Melbourne", "Professional Plumbing Victoria", "Recruitment Services Melbourne", "Skill City Group"],
+  metadataBase: new URL('https://skillcitysecurity.com.au'),
+  title: "Skill City Group - Premier Security Services & Facility Solutions in Australia",
+  description: "Leading provider of top-tier security services, facility management, professional plumbing, corporate training, and recruitment across Australia.",
+  keywords: ["Security Services Australia", "Security Company Australia", "Security Guards Australia", "Facility Solutions Australia", "Professional Plumbing Australia", "Recruitment Services Australia", "Skill City Group"],
   openGraph: {
+    title: "Skill City Group - Premier Security Services & Facility Solutions in Australia",
+    description: "Leading provider of top-tier security services, facility management, professional plumbing, corporate training, and recruitment across Australia.",
+    url: 'https://skillcitysecurity.com.au',
+    siteName: 'Skill City Group',
     locale: 'en_AU',
     type: 'website',
+  },
+  alternates: {
+    canonical: 'https://skillcitysecurity.com.au',
   }
 };
 
