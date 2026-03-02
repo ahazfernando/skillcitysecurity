@@ -17,6 +17,20 @@ export const metadata: Metadata = {
     siteName: 'Skill City Group',
     locale: 'en_AU',
     type: 'website',
+    images: [
+      {
+        url: 'https://skillcitysecurity.com.au/securitylogo/SkillCitySecurity.png',
+        width: 1200,
+        height: 630,
+        alt: 'Skill City Group Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Skill City Group - Premier Security Services",
+    description: "Leading provider of top-tier security services and facility solutions across Australia.",
+    images: ['https://skillcitysecurity.com.au/securitylogo/SkillCitySecurity.png'],
   },
   alternates: {
     canonical: 'https://skillcitysecurity.com.au',
